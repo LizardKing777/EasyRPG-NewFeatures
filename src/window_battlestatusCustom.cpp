@@ -33,6 +33,7 @@
 #include "feature.h"
 #include "scene_battle.h"
 #include "game_strings.h"
+#include <lcf/reader_util.h>
 
 Window_BattleStatusCustom::Window_BattleStatusCustom(int ix, int iy, int iwidth, int iheight, bool enemy) :
 	Window_BattleStatus(ix, iy, iwidth, iheight, enemy) {
@@ -158,4 +159,87 @@ void Window_BattleStatusCustom::UpdateCursorRect()
 			cursor_rect = { 4 + text_offset + (index % column_max) * (GetWidth() - 24) / column_max, (index / column_max - GetTopRow()) * (menu_item_height), (GetWidth() - 24) / column_max, menu_item_height };
 		// cursor_rect = { 4 + text_offset, (index - GetTopRow()) * (menu_item_height + 10), (GetWidth() - 24)/column_max, menu_item_height };
 	}
+}
+
+
+void Window_BattleStatusCustom::RefreshResult(std::string win_name, int exp, int money, std::vector<int> drops) {
+	contents->Clear();
+
+	item_max = Main_Data::game_party->GetActors().size();
+
+	auto it3 = CustomBattle::customWindows.find(win_name);
+
+	MenuCustomWindow win = CustomBattle::customWindows[win_name];
+
+	int y = 0;
+	for (int i = 0; i < item_max; ++i) {
+
+		for (auto stat : CustomBattle::customWindows[win_name].stats) {
+			if (!stat.unique) {
+
+				auto align = Text::AlignLeft;
+				if (stat.align == 1)
+					align = Text::AlignCenter;
+				else if (stat.align == 2)
+					align = Text::AlignRight;
+				int tx = stat.x + (i % column_max) * (GetWidth() - 24) / column_max;
+				int ty = stat.y + (i / column_max - GetTopRow()) * (menu_item_height)+2 + y;
+
+				// Output::Debug("{} {} {} {} {} {}", i, column_max, GetWidth(), (i % column_max) * (GetWidth() - 24) / column_max, (i % column_max), (GetWidth() - 24) / column_max);
+
+				// cursor_rect = { 4 + text_offset + (index % column_max) * (GetWidth() - 24) / column_max, (index / column_max - GetTopRow()) * (menu_item_height + 10), (GetWidth() - 24) / column_max, menu_item_height };
+
+				std::string text = Game_Strings::Extract(stat.text, false);
+				contents->TextDraw(tx, ty, Font::ColorDefault, Window_MenuStatus_Custom::ParserText(this, text, i, tx, ty, align), align);
+				//contents->TextDraw(tx, ty, Font::ColorDefault, stat.text, align);
+			}
+		}
+
+	}
+	for (auto stat : CustomBattle::customWindows[win_name].stats) {
+		if (stat.unique) {
+			//DrawActorName(actor, 48 + 8 + text_offset, i * 48 + 2 + y);
+			auto align = Text::AlignLeft;
+			if (stat.align == 1)
+				align = Text::AlignCenter;
+			else if (stat.align == 2)
+				align = Text::AlignRight;
+			int tx = stat.x;
+			int ty = stat.y;
+			std::string text = Game_Strings::Extract(stat.text, false);
+
+			std::regex patternE("@exp");
+			std::string val = std::to_string(exp);
+			text = std::regex_replace(text, patternE, val);
+
+			std::regex patternG("@gold");
+			val = std::to_string(money);
+			text = std::regex_replace(text, patternG, val);
+
+			std::string items = "";
+			for (auto item_id : drops) {
+				auto item = lcf::ReaderUtil::GetElement(lcf::Data::items, item_id);
+				items = items + item->name.c_str() + "\n";
+			}
+
+			std::regex patternD("@drops");
+			text = std::regex_replace(text, patternD, items);
+
+			std::stringstream ss(text);
+			std::string item;
+
+			while (getline(ss, item, '\n')) {
+				//contents->TextDraw(tx, ty, Font::ColorDefault, item, align);
+
+				text = Window_MenuStatus_Custom::ParserText(this, item, 0, tx, ty, align);
+
+				contents->TextDraw(tx, ty, Font::ColorDefault, text, align);
+				ty += 14;
+			}
+
+			//text = ParserText(text, 0, tx, ty, align);
+			//contents->TextDraw(tx, ty, Font::ColorDefault, text, align);
+		}
+	}
+	RefreshGauge();
 }

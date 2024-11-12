@@ -352,7 +352,25 @@ std::string Window_MenuStatus_Custom::ParserText(Window_Base* w, std::string tex
 	// Ajout du texte après la dernière correspondance
 	resultat += text.substr(lastPos);
 
+	text = resultat;
+	resultat = "";
 
+	std::regex pattern2("@pic\\[(.*)\\]");
+	std::sregex_iterator it2(text.begin(), text.end(), pattern2);
+
+	lastPos = 0;
+	while (it2 != end) {
+		resultat += it2->prefix();
+
+		resultat += "";
+		std::string pic_name = it2->str(1);
+		w->DrawPicture(pic_name, tx, ty);
+
+		lastPos = it2->position() + it2->length();
+		++it2;
+	}
+
+	resultat += text.substr(lastPos);
 
 	return resultat;
 }

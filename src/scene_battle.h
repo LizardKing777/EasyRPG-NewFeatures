@@ -200,6 +200,9 @@ protected:
 	std::unique_ptr<Window_BattleStatus> status_window;
 	std::unique_ptr<Window_Message> message_window;
 
+	std::unique_ptr<Window_BattleStatusCustom> result_window;
+	std::unique_ptr<Window_BattleStatusCustom> result_windowItems;
+
 	std::deque<Game_Battler*> battle_actions;
 	std::vector<std::unique_ptr<AutoBattle::AlgorithmBase>> autobattle_algos;
 	std::vector<std::unique_ptr<EnemyAi::AlgorithmBase>> enemyai_algos;

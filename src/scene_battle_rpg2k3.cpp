@@ -1861,6 +1861,7 @@ Scene_Battle_Rpg2k3::SceneActionReturn Scene_Battle_Rpg2k3::ProcessSceneActionVi
 		ePreMessage,
 		eMessages,
 		eEnd,
+		eItems,
 	};
 
 	if (scene_action_substate == eCBAInit) {
@@ -1936,32 +1937,67 @@ Scene_Battle_Rpg2k3::SceneActionReturn Scene_Battle_Rpg2k3::ProcessSceneActionVi
 		PendingMessage pm(Game_Message::CommandCodeInserter);
 		pm.SetEnableFace(false);
 
-		pm.PushLine(ToString(lcf::Data::terms.victory) + Player::escape_symbol + "|");
-		pm.PushPageEnd();
+		std::string win_name = "BattleResult";
 
-		std::string space = Player::IsRPG2k3E() ? " " : "";
+		auto it2 = CustomBattle::customWindows.find(win_name);
 
-		std::stringstream ss;
-		if (exp > 0) {
-			ss << exp << space << lcf::Data::terms.exp_received;
-			pm.PushLine(ss.str());
-			pm.PushPageEnd();
+		bool useCustom = false;
+
+		if (it2 != CustomBattle::customWindows.end()) {
+
+			useCustom = true;
+
+			int x = CustomBattle::customWindows[win_name].x;
+			int y = CustomBattle::customWindows[win_name].y;
+			int w = CustomBattle::customWindows[win_name].w;
+			int h = CustomBattle::customWindows[win_name].h;
+			result_window.reset(new Window_BattleStatusCustom(x, y, w, h));
+
+
+			result_window->SetColumnMax(CustomBattle::customWindows[win_name].column);
+			result_window->SetMenuItemHeight(CustomBattle::customWindows[win_name].itemHeight);
+
+			result_window->SetVisible(!CustomBattle::customWindows[win_name].hide);
+			result_window->SetOpacity(CustomBattle::customWindows[win_name].opacity);
+			result_window->SetBackOpacity(CustomBattle::customWindows[win_name].opacity);
+			result_window->SetZ(message_window->GetZ() + 1);
+
+			result_window->RefreshResult(win_name, exp, money, drops);
+
+			pm.PushLine(" ");
+
+			message_window->SetX(999999999999);
+			status_window->SetVisible(false);
+
 		}
-		if (money > 0) {
-			ss.str("");
-			ss << lcf::Data::terms.gold_recieved_a << " " << money << lcf::Data::terms.gold << lcf::Data::terms.gold_recieved_b;
-			pm.PushLine(ss.str());
+		else {
+			pm.PushLine(ToString(lcf::Data::terms.victory) + Player::escape_symbol + "|");
 			pm.PushPageEnd();
-		}
-		for (auto& item_id: drops) {
-			const lcf::rpg::Item* item = lcf::ReaderUtil::GetElement(lcf::Data::items, item_id);
-			// No Output::Warning needed here, reported later when the item is added
-			StringView item_name = item ? StringView(item->name) : StringView("??? BAD ITEM ???");
 
-			ss.str("");
-			ss << item_name << space << lcf::Data::terms.item_recieved;
-			pm.PushLine(ss.str());
-			pm.PushPageEnd();
+			std::string space = Player::IsRPG2k3E() ? " " : "";
+
+			std::stringstream ss;
+			if (exp > 0) {
+				ss << exp << space << lcf::Data::terms.exp_received;
+				pm.PushLine(ss.str());
+				pm.PushPageEnd();
+			}
+			if (money > 0) {
+				ss.str("");
+				ss << lcf::Data::terms.gold_recieved_a << " " << money << lcf::Data::terms.gold << lcf::Data::terms.gold_recieved_b;
+				pm.PushLine(ss.str());
+				pm.PushPageEnd();
+			}
+			for (auto& item_id : drops) {
+				const lcf::rpg::Item* item = lcf::ReaderUtil::GetElement(lcf::Data::items, item_id);
+				// No Output::Warning needed here, reported later when the item is added
+				StringView item_name = item ? StringView(item->name) : StringView("??? BAD ITEM ???");
+
+				ss.str("");
+				ss << item_name << space << lcf::Data::terms.item_recieved;
+				pm.PushLine(ss.str());
+				pm.PushPageEnd();
+			}
 		}
 
 		for (auto* actor: Main_Data::game_party->GetActors()) {
@@ -1971,15 +2007,65 @@ Scene_Battle_Rpg2k3::SceneActionReturn Scene_Battle_Rpg2k3::ProcessSceneActionVi
 		}
 
 		Main_Data::game_party->GainGold(money);
-		for (auto& item: drops) {
-			Main_Data::game_party->AddItem(item, 1);
-		}
+		if (!useCustom)
+			for (auto& item: drops) {
+				Main_Data::game_party->AddItem(item, 1);
+			}
 
 		message_window->SetHeight(32);
 		message_window->SetMaxLinesPerPage(1);
 		Game_Message::SetPendingMessage(std::move(pm));
 
 		status_window->Refresh();
+
+		if (useCustom) {
+			SetSceneActionSubState(eItems);
+		}
+		else
+			SetSceneActionSubState(eEnd);
+		return SceneActionReturn::eContinueThisFrame;
+	}
+	else if (scene_action_substate == eItems) {
+
+		int exp = Main_Data::game_enemyparty->GetExp();
+		int money = Main_Data::game_enemyparty->GetMoney();
+		std::vector<int> drops;
+		Main_Data::game_enemyparty->GenerateDrops(drops);
+
+
+		std::string win_name = "BattleResultItems";
+
+		result_window->SetVisible(false);
+		int x = CustomBattle::customWindows[win_name].x;
+		int y = CustomBattle::customWindows[win_name].y;
+		int w = CustomBattle::customWindows[win_name].w;
+		int h = CustomBattle::customWindows[win_name].h;
+		result_windowItems.reset(new Window_BattleStatusCustom(x, y, w, h));
+
+
+		result_windowItems->SetColumnMax(CustomBattle::customWindows[win_name].column);
+		result_windowItems->SetMenuItemHeight(CustomBattle::customWindows[win_name].itemHeight);
+
+		result_windowItems->SetVisible(!CustomBattle::customWindows[win_name].hide);
+		result_windowItems->SetOpacity(CustomBattle::customWindows[win_name].opacity);
+		result_windowItems->SetBackOpacity(CustomBattle::customWindows[win_name].opacity);
+		result_windowItems->SetZ(message_window->GetZ() + 1);
+
+		result_windowItems->RefreshResult(win_name, exp, money, drops);
+
+		PendingMessage pm(Game_Message::CommandCodeInserter);
+		pm.SetEnableFace(false);
+		pm.SetWordWrapped(Feature::HasPlaceholders());
+
+		pm.PushLine(" ");
+		//PushItemRecievedMessages(pm, drops);
+
+		pm.PushPageEnd();
+		Game_Message::SetPendingMessage(std::move(pm));
+
+		for (auto& item : drops) {
+			Main_Data::game_party->AddItem(item, 1);
+		}
 
 		SetSceneActionSubState(eEnd);
 		return SceneActionReturn::eContinueThisFrame;

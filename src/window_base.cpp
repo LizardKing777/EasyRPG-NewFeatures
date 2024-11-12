@@ -376,3 +376,25 @@ int Window_Base::GetValueFontColor(int have, int max, bool can_knockout) const {
 	if (max > 0 && (have <= max / 4)) return Font::ColorCritical;
 	return Font::ColorDefault;
 }
+
+void Window_Base::DrawPicture(StringView face_name, int cx, int cy, bool flip) {
+	if (face_name.empty()) { return; }
+
+	FileRequestAsync* request = AsyncHandler::RequestFile("Picture", face_name);
+	request->SetGraphicFile(true);
+	face_request_ids.push_back(request->Bind(&Window_Base::OnPicReady, this, cx, cy, flip));
+	request->Start();
+}
+
+void Window_Base::OnPicReady(FileRequestResult* result, int cx, int cy, bool flip) {
+	BitmapRef faceset = Cache::Picture(result->file, true);
+
+	Rect src_rect(0, 0, faceset->width(), faceset->height());
+
+	if (flip) {
+		contents->FlipBlit(cx, cy, *faceset, src_rect, true, false, Opacity::Opaque());
+	}
+	else {
+		contents->Blit(cx, cy, *faceset, src_rect, 255);
+	}
+}

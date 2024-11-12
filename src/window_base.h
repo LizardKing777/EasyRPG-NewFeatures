@@ -52,6 +52,7 @@ public:
 	 * Draw helpers.
 	 */
 	/** @{ */
+	void DrawPicture(StringView face_name, int cx, int cy, bool flip = false);
 	void DrawFace(StringView face_name, int face_index, int cx, int cy, bool flip = false);
 	void DrawActorFace(const Game_Actor& actor, int cx, int cy);
 	void DrawActorName(const Game_Battler& actor, int cx, int cy) const;
@@ -86,6 +87,7 @@ public:
 
 protected:
 	void OnFaceReady(FileRequestResult* result, int face_index, int cx, int cy, bool flip);
+	void OnPicReady(FileRequestResult* result, int cx, int cy, bool flip);
 
 	std::vector<FileRequestBinding> face_request_ids;
 

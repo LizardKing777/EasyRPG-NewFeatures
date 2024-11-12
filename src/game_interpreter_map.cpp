@@ -750,7 +750,7 @@ bool Game_Interpreter_Map::CommandSetCustomBattleHUD(lcf::rpg::EventCommand cons
 				// Todo rework all this part to include Pages
 				//s = params[6];
 
-				if (name != "Commands" && name != "Options" && name != "Status" && name != "Targets" && name != "Items" && name != "Skills" && name != "SP") {
+				if (name != "Commands" && name != "Options" && name != "Status" && name != "Targets" && name != "Items" && name != "Skills" && name != "SP" && name != "BattleMessage" && name != "BattleResult" && name != "BattleResultItems") {
 					for (int i = 7; i < params.size(); i++) {
 
 						// Output::Debug("Page {}", params[i]);
@@ -794,7 +794,7 @@ bool Game_Interpreter_Map::CommandSetCustomBattleHUD(lcf::rpg::EventCommand cons
 
 					}
 				}
-				else if (name == "Status") {
+				else if (name == "Status" || name == "BattleResult" || name == "BattleResultItems") {
 
 					// Output::Debug("Window Status");
 

@@ -37,6 +37,7 @@ public:
 	 * Renders the current status on the window.
 	 */
 	void Refresh() override;
+	void RefreshResult(std::string win_name, int exp, int money, std::vector<int> drops);
 	void RefreshGauge() override;
 
 	void UpdateCursorRect() override;
