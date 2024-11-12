@@ -927,6 +927,9 @@ public:
 	/** @return inflicted states as state objects ordered by priority */
 	const std::vector<lcf::rpg::State*> GetInflictedStatesOrderedByPriority() const;
 
+	bool GetPreDeath();
+	void SetPreDeath(bool b);
+
 protected:
 	/** Gauge for RPG2k3 Battle */
 	int gauge = 0;
@@ -970,6 +973,8 @@ protected:
 		double current_level = 0.0;
 	};
 	FlashData flash;
+
+	bool pre_death;
 };
 
 inline Color Game_Battler::GetFlashColor() const {
@@ -1167,5 +1172,12 @@ inline bool Game_Battler::IsSpriteDirectionFlipped() const {
 		default:
 			return IsDirectionFlipped();
 	}
+}
+
+inline bool Game_Battler::GetPreDeath() {
+	return pre_death;
+}
+inline void Game_Battler::SetPreDeath(bool b) {
+	pre_death = b;
 }
 #endif

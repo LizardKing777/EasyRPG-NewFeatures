@@ -31,6 +31,8 @@
 #include "feature.h"
 
 #include <algorithm>
+#include <game_custombattle.h>
+#include <output.h>
 
 namespace Algo {
 
@@ -189,6 +191,27 @@ int CalcNormalAttackEffect(const Game_Battler& source,
 		lcf::rpg::System::BattleCondition cond,
 		bool emulate_2k3_enemy_row_bug)
 {
+
+	int itemID = 0;
+	if (source.GetType() == Game_Battler::Type_Ally) {
+		const Game_Actor& a = (Game_Actor&)source;
+		itemID = a.GetWeaponId();
+	}
+
+	std::string alg = Game_CustomBattle::getItemAlgo(itemID, source);
+	if (alg != "") {
+
+		Output::Debug("Expression : {}", alg);
+
+		alg = Game_CustomBattle::parseExpression(alg, &source, &target, 0, is_critical_hit, is_charged);
+		Output::Debug("Parsed expression : {}", alg);
+
+		int res = Game_CustomBattle::evaluateExpression(alg);
+		Output::Debug("Res = {}", res);
+
+		return res;
+	}
+
 	const auto atk = source.GetAtk(weapon);
 	const auto def = target.GetDef();
 
@@ -229,6 +252,20 @@ int CalcSkillEffect(const Game_Battler& source,
 		bool is_critical_hit,
 		lcf::rpg::System::BattleCondition cond,
 		bool emulate_2k3_enemy_row_bug) {
+
+	std::string alg = Game_CustomBattle::getSkillAlgo(skill.ID, source);
+	if (alg != "") {
+
+		Output::Debug("Expression : {}", alg);
+
+		alg = Game_CustomBattle::parseExpression(alg, &source, &target, skill.ID, is_critical_hit, false);
+		Output::Debug("Parsed expression : {}", alg);
+
+		int res = Game_CustomBattle::evaluateExpression(alg);
+		Output::Debug("Res = {}", res);
+
+		return res;
+	}
 
 	auto effect = skill.power;
 	effect += skill.physical_rate * source.GetAtk() / 20;

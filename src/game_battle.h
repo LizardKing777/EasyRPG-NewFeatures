@@ -89,7 +89,7 @@ namespace Game_Battle {
 	 *
 	 * @return the number of frames of the animation.
 	 */
-	int ShowBattleAnimation(int animation_id, std::vector<Game_Battler*> targets, bool only_sound = false, int cutoff = -1, bool invert = false);
+	int ShowBattleAnimation(int animation_id, std::vector<Game_Battler*> targets, bool only_sound = false, int cutoff = -1, bool invert = false, Game_Battler* source = NULL);
 
 	/**
 	 * Whether or not a battle animation is currently playing.

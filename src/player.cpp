@@ -25,6 +25,7 @@
 #include <fstream>
 #include <memory>
 #include <thread>
+#include <game_custombattle.h>
 
 #ifdef _WIN32
 #  include "platform/windows/utils.h"
@@ -925,6 +926,7 @@ void Player::ResetGameObjects() {
 	Main_Data::game_system->ReloadSystemGraphic();
 
 	Input::ResetMask();
+	Game_CustomBattle::loadCustomBattle();
 }
 
 static bool DefaultLmuStartFileExists(const FilesystemView& fs) {

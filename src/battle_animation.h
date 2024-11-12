@@ -79,6 +79,8 @@ public:
 	 **/
 	void SetInvert(bool inverted);
 
+	Game_Battler* source;
+
 protected:
 	BattleAnimation(const lcf::rpg::Animation& anim, bool only_sound = false, int cutoff = -1);
 
@@ -122,7 +124,7 @@ protected:
 // For playing animations against a (group of) battlers in battle.
 class BattleAnimationBattle : public BattleAnimation {
 public:
-	BattleAnimationBattle(const lcf::rpg::Animation& anim, std::vector<Game_Battler*> battlers, bool only_sound = false, int cutoff_frame = -1, bool set_invert = false);
+	BattleAnimationBattle(const lcf::rpg::Animation& anim, std::vector<Game_Battler*> battlers, bool only_sound = false, int cutoff_frame = -1, bool set_invert = false, Game_Battler* source = NULL);
 	void Draw(Bitmap& dst) override;
 protected:
 	void FlashTargets(int r, int g, int b, int p) override;

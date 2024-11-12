@@ -149,7 +149,7 @@ Spriteset_Battle& Game_Battle::GetSpriteset() {
 	return *spriteset;
 }
 
-int Game_Battle::ShowBattleAnimation(int animation_id, std::vector<Game_Battler*> targets, bool only_sound, int cutoff, bool invert) {
+int Game_Battle::ShowBattleAnimation(int animation_id, std::vector<Game_Battler*> targets, bool only_sound, int cutoff, bool invert, Game_Battler* source) {
 	const lcf::rpg::Animation* anim = lcf::ReaderUtil::GetElement(lcf::Data::animations, animation_id);
 	if (!anim) {
 		Output::Warning("ShowBattleAnimation Many: Invalid animation ID {}", animation_id);
@@ -171,13 +171,13 @@ int Game_Battle::ShowBattleAnimation(int animation_id, std::vector<Game_Battler*
 	auto& main_anim = main_type == Game_Battler::Type_Ally ? animation_actors : animation_enemies;
 	auto& alt_anim = main_type == Game_Battler::Type_Ally ? animation_enemies : animation_actors;
 
-	main_anim.reset(new BattleAnimationBattle(*anim, std::move(targets), only_sound, cutoff, invert));
+	main_anim.reset(new BattleAnimationBattle(*anim, std::move(targets), only_sound, cutoff, invert, source));
 	auto main_frames = main_anim->GetFrames();
 	main_frames = cutoff >= 0 ? std::min(main_frames, cutoff) : main_frames;
 
 	auto alt_frames = 0;
 	if (!alt_targets.empty()) {
-		alt_anim.reset(new BattleAnimationBattle(*anim, std::move(alt_targets), only_sound, cutoff, invert));
+		alt_anim.reset(new BattleAnimationBattle(*anim, std::move(alt_targets), only_sound, cutoff, invert, source));
 		auto alt_frames = alt_anim->GetFrames();
 		alt_frames = cutoff >= 0 ? std::min(alt_frames, cutoff) : alt_frames;
 	}

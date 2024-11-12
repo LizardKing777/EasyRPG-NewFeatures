@@ -33,6 +33,8 @@
 #include "drawable_mgr.h"
 #include "scene_map.h"
 #include "spriteset_map.h"
+#include <game_battlealgorithm.h>
+#include <scene_battle_rpg2k3.h>
 
 BattleAnimation::BattleAnimation(const lcf::rpg::Animation& anim, bool only_sound, int cutoff) :
 	animation(anim), only_sound(only_sound)
@@ -149,7 +151,30 @@ void BattleAnimation::ProcessAnimationFlash(const lcf::rpg::AnimationTiming& tim
 
 void BattleAnimation::ProcessAnimationTiming(const lcf::rpg::AnimationTiming& timing) {
 	// Play the SE.
-	Main_Data::game_system->SePlay(timing.se);
+
+	if (timing.se.name == "take_damage") {
+		if (source) {
+			auto action = source->GetBattleAlgorithm();
+			if (action) {
+				bool was_dead = action->GetTarget()->IsDead();
+				action->Execute();
+				action->ApplyAll();
+				if (!was_dead && action->GetTarget()->IsDead() && action->GetTarget()->GetType() == Game_Battler::Type_Enemy) {
+					action->GetTarget()->SetPreDeath(true);
+					((Game_Enemy*)action->GetTarget())->SetDeathTimer();
+					Main_Data::game_system->SePlay(Main_Data::game_system->GetSystemSE(Main_Data::game_system->SFX_EnemyKill));
+				}
+
+				Scene_Battle_Rpg2k3* scene = (Scene_Battle_Rpg2k3*)Scene::Find(Scene::Battle).get();
+				if (scene) {
+					scene->UpdateDamages(action);
+				}
+
+			}
+		}
+	} else 
+		Main_Data::game_system->SePlay(timing.se);
+
 	if (IsOnlySound()) {
 		return;
 	}
@@ -284,10 +309,11 @@ void BattleAnimationMap::ShakeTargets(int /* str */, int /* spd */, int /* time 
 
 /////////
 
-BattleAnimationBattle::BattleAnimationBattle(const lcf::rpg::Animation& anim, std::vector<Game_Battler*> battlers, bool only_sound, int cutoff_frame, bool set_invert) :
+BattleAnimationBattle::BattleAnimationBattle(const lcf::rpg::Animation& anim, std::vector<Game_Battler*> battlers, bool only_sound, int cutoff_frame, bool set_invert, Game_Battler* s) :
 	BattleAnimation(anim, only_sound, cutoff_frame), battlers(std::move(battlers))
 {
 	invert = set_invert;
+	source = s;
 }
 
 void BattleAnimationBattle::Draw(Bitmap& dst) {

@@ -99,6 +99,7 @@ void Sprite_Enemy::Draw(Bitmap& dst) {
 	const auto et = enemy->GetExplodeTimer();
 
 	if (!enemy->Exists() && dt == 0 && et == 0) {
+
 		return;
 	}
 

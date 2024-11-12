@@ -90,6 +90,8 @@ public:
 	void OnPartyChanged(Game_Actor* actor, bool add) override;
 	void OnEventHpChanged(Game_Battler* battler, int hp) override;
 
+	void UpdateDamages(BattleAlgorithmRef action);
+
 protected:
 	void Start2();
 	void InitAtbGauge(Game_Battler& battler, int preempt_atb, int ambush_atb);

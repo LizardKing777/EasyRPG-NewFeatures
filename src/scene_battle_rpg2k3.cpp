@@ -2993,3 +2993,39 @@ void Scene_Battle_Rpg2k3::CBAMove() {
 		}
 	}
 }
+
+
+void Scene_Battle_Rpg2k3::UpdateDamages(BattleAlgorithmRef action) {
+
+	auto* target = action->GetTarget();
+
+	if (target) {
+
+		auto dmg = action->GetAffectedHp();
+		if (dmg != 0) {
+
+			int color = dmg < 0 ? Font::ColorDefault : Font::ColorHeal;
+
+			if (action->IsCriticalHit())
+				color = 5;
+
+			DrawFloatText(
+				target->GetBattlePosition().x,
+				target->GetBattlePosition().y,
+				color,
+				std::to_string(std::abs(dmg)));
+
+		}
+
+		auto sp = action->GetAffectedSp();
+		if (sp != 0) {
+			int color = sp < 0 ? 6 : 7;
+
+			DrawFloatText(
+				target->GetBattlePosition().x,
+				target->GetBattlePosition().y,
+				color,
+				std::to_string(std::abs(sp)));
+		}
+	}
+}

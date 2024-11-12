@@ -122,7 +122,7 @@ int Game_BattleAlgorithm::AlgorithmBase::PlayAnimation(int anim_id, bool only_so
 		}
 	}
 
-	return Game_Battle::ShowBattleAnimation(anim_id, anim_targets, only_sound, cutoff, invert);
+	return Game_Battle::ShowBattleAnimation(anim_id, anim_targets, only_sound, cutoff, invert, source);
 }
 
 std::string Game_BattleAlgorithm::AlgorithmBase::GetFailureMessage() const {
@@ -925,7 +925,7 @@ bool Game_BattleAlgorithm::Skill::vExecute() {
 		&& is_dead;
 
 	// Dead targets only allowed if this skill revives later
-	if (is_dead && (!IsPositive() || !cures_death)) {
+	if ((is_dead && !target->GetPreDeath()) && (!IsPositive() || !cures_death)) {
 		return SetIsFailure();
 	}
 
