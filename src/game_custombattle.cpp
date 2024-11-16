@@ -278,6 +278,7 @@ double Game_CustomBattle::applyOp(double a, double b, std::string op)
 		return max(a, b);
 	if (op == "?") {
 		value = Rand::GetRandomNumber(rmin, rmax);
+		// Output::Debug("R {} {} {}", rmin, rmax, value);
 		return value;
 	}
 	if (op == "<")
@@ -364,7 +365,7 @@ std::string Game_CustomBattle::parseExpression(const string& expression, const G
 
 	chaine = sub_string;
 
-	std::regex regE("callevent\\((\\d*),(\\d*),(\\d*)\\)");
+	std::regex regE("callevent\\((\\d*), *(\\d*), *(\\d*)\\)");
 	std::sregex_iterator it_event(chaine.begin(), chaine.end(), regE);
 	while (it_event != end)
 	{
@@ -392,6 +393,42 @@ std::string Game_CustomBattle::parseExpression(const string& expression, const G
 		sub_string = ReplaceString(chaine, it_event->str(), "");
 
 		it_event++;
+	}
+
+	chaine = sub_string;
+
+
+
+	std::regex regElt("elements\\((\\d*), *(\\d*)\\)");
+	std::sregex_iterator it_element(chaine.begin(), chaine.end(), regElt);
+	while (it_element != end)
+	{
+
+		std::string pwr = "";
+
+		int elementsID = std::stoi(it_element->str(1)) - 1;
+		int elementPwr = std::stoi(it_element->str(2));
+
+		// Output::Debug("{} {} {} {}", eventID, enemy_index, enemyID, it_event->str());
+
+		if (elementsID > 0) {
+
+			if (elementPwr == 0)
+				pwr = to_string(lcf::Data::attributes[elementsID].a_rate);
+			if (elementPwr == 1)
+				pwr = to_string(lcf::Data::attributes[elementsID].b_rate);
+			if (elementPwr == 2)
+				pwr = to_string(lcf::Data::attributes[elementsID].c_rate);
+			if (elementPwr == 3)
+				pwr = to_string(lcf::Data::attributes[elementsID].d_rate);
+			if (elementPwr == 4)
+				pwr = to_string(lcf::Data::attributes[elementsID].e_rate);
+
+		}
+
+		sub_string = ReplaceString(chaine, it_element->str(), pwr);
+
+		it_element++;
 	}
 
 	chaine = sub_string;
@@ -606,6 +643,8 @@ double Game_CustomBattle::evaluateExpression(const string& expression)
 
 	std::string op = "";
 
+	bool op_unitaire = true;
+
 	std::vector<Vec2> algo = {};
 	int w = 0;
 	char old_op = ' ';
@@ -622,39 +661,49 @@ double Game_CustomBattle::evaluateExpression(const string& expression)
 					>> num; // Convert the token to a number
 				operands.push(num); // Push the number onto the
 				// operand stack
+				op_unitaire = false;
 			}
 			else if (Game_CustomBattle::isOperator(token)) { // If the token is
 				// an operator
 				std::string op = token;
-				// While the operator stack is not empty and the
-				// top operator has equal or higher precedence
-				while (!operators.empty()
-					&& Game_CustomBattle::precedence(operators.top())
-					>= Game_CustomBattle::precedence(op)) {
-					// Pop two operands and one operator
-					double b = operands.top();
-					operands.pop();
-					double a = operands.top();
-					operands.pop();
-					std::string op = operators.top();
-					operators.pop();
-					// Apply the operator to the operands and
-					// push the result onto the operand stack
-					operands.push(Game_CustomBattle::applyOp(a, b, op));
+				if (op == "-" && op_unitaire) {
+					operands.push(0);
+					operators.push(op);
+					Output::Debug("Unitaire");
 				}
-				// Push the current operator onto the operator
-				// stack
-				operators.push(op);
+				else {
+					// While the operator stack is not empty and the
+					// top operator has equal or higher precedence
+					while (!operators.empty()
+						&& Game_CustomBattle::precedence(operators.top())
+						>= Game_CustomBattle::precedence(op)) {
+						// Pop two operands and one operator
+						double b = operands.top();
+						operands.pop();
+						double a = operands.top();
+						operands.pop();
+						std::string op = operators.top();
+						operators.pop();
+						// Apply the operator to the operands and
+						// push the result onto the operand stack
+						operands.push(Game_CustomBattle::applyOp(a, b, op));
+					}
+					// Push the current operator onto the operator
+					// stack
+					operators.push(op);
+				}
+				op_unitaire = true;
 			}
 			else if (token[0] == '(') { // If the token is an
 				// opening parenthesis
-	// Push it onto the operator stack
+				// Push it onto the operator stack
 				operators.push("(");
+				op_unitaire = true;
 			}
 			else if (token[0] == ')') { // If the token is a
 				// closing parenthesis
-	// While the operator stack is not empty and the
-	// top operator is not an opening parenthesis
+				// While the operator stack is not empty and the
+				// top operator is not an opening parenthesis
 				while (!operators.empty()
 					&& operators.top() != "(") {
 					// Pop two operands and one operator
@@ -670,6 +719,7 @@ double Game_CustomBattle::evaluateExpression(const string& expression)
 				}
 				// Pop the opening parenthesis
 				operators.pop();
+				op_unitaire = false;
 			}
 		}
 
