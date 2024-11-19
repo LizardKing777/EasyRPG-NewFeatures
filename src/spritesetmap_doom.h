@@ -28,12 +28,12 @@ public:
 
 	PlayerDoom player7 = { 10 / 2.0 * TILE_SIZE, 8 / 2.0 * TILE_SIZE, 0, 110.0f * (M_PI / 180.0f) };
 
-	// 
+	//
 	struct DrawingDoom {
 		int type; // 0 => Wall, 1 => Event
 		int x;
-		float distance; 
-		int textureX; 
+		float distance;
+		int textureX;
 		int evID;
 		Point position;
 
@@ -74,6 +74,7 @@ public:
 	float renderTexturedFloor(float x, float distance, float angle);
 	void renderTexturedFloor();
 	BitmapRef mapTexture(int x, int y);
+	BitmapRef mapTexture1(int x, int y);
 	void OnTitleSpriteReady(FileRequestResult* result, int i);
 	BitmapRef bitmap;
 	BitmapRef bitmap2;
@@ -139,6 +140,7 @@ public:
 
 	Scene* scene_map = nullptr;
 	TilemapLayer* tilemapDown;
+	TilemapLayer* tilemapUp;
 	//std::shared_ptr<Scene_Map*> scene_map;
 	//std::unique_ptr<Scene_Map*> scene_map;
 	//std::unique_ptr<Scene_Map> scene_map;

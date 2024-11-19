@@ -66,7 +66,7 @@ float Spriteset_MapDoom::castRay(float rayAngle, int& ray, std::vector<DrawingDo
 						d.push_back(de);
 					}
 				}
-				
+
 			}
 		}
 
@@ -172,6 +172,7 @@ float Spriteset_MapDoom::renderTexturedFloor(float x1, float wallHeight, float r
 	int mapX;
 	int mapY;
 	BitmapRef texture;
+	BitmapRef texture1;
 
 	const int inf = std::numeric_limits<int>::max();
 
@@ -259,7 +260,7 @@ float Spriteset_MapDoom::renderTexturedFloor(float x1, float wallHeight, float r
 		else {
 			break;
 		}
-		
+
 	}
 
 	if (Input::IsTriggered(Input::DEBUG_THROUGH)) {
@@ -308,13 +309,13 @@ void Spriteset_MapDoom::renderScene() {
 
 			DrawingDoom d = { 0, x, distance, ray, 0, {mx, my} };
 			drawings.push_back(d);
-			
+
 		}
 
 	}
 
 	std::sort(drawings.begin(), drawings.end(), std::greater<DrawingDoom>());
-	
+
 	for (auto d : drawings) {
 
 		if ( d.type == 2) {
@@ -326,7 +327,7 @@ void Spriteset_MapDoom::renderScene() {
 
 				// Test 1
 				//
-				// 
+				//
 				// Calcul de la distance en fonction de la hauteur à laquelle le sol doit être projeté
 				//float y = d.position.y * TILE_SIZE;
 				//	float rowDistance = Player::screen_height / (2.0f * (Player::screen_height - y));  // y est la hauteur actuelle dans l'image
@@ -413,7 +414,7 @@ void Spriteset_MapDoom::renderScene() {
 							//Output::Debug(" {}", textureX);
 							float w = (float)(texture->width()) / TILE_SIZE;
 							int ww = (int)(ceil(w));
-						
+
 							int tx = textureX * 100 / (TILE_SIZE - 1) * (texture->width() - 1) / 100;
 							float scaleFactor = static_cast<float>(texture->width()) / 16.0f;
 							if (scaleFactor < 0)
@@ -612,7 +613,7 @@ void Spriteset_MapDoom::renderMode7() {
 
 						if (event->GetName() != "[WALL]" && event->GetName() != "[WALL_D]") {
 							float distance = 0.01f;
-							
+
 							DrawingDoom de = { 1, x, distance, 0, event->GetId(), {mapX, mapY} };
 
 							auto b = std::find_if(drawings.begin(),
@@ -692,7 +693,7 @@ void Spriteset_MapDoom::renderMode7() {
 
 			if (distance > 0) {
 
-				
+
 
 			}
 		}
@@ -810,15 +811,40 @@ void Spriteset_MapDoom::renderMode7() {
 	castRay7();
 }
 
+
+
+
+//BitmapRef Spriteset_MapDoom::mapTexture(int x, int y) {
+//	if (x >= 0 && y >= 0 && x < mapWidth() && y < mapHeight()) {
+//		//int id = ((Scene_Map*)scene_map)->GetTileID(x, y, 0);
+//		int id = tilemapDown->GetTileDoom(x, y, 0);
+//		if (!mapTexturesID[id]) {
+//			mapTexturesID[id] = ((Scene_Map*)scene_map)->GetTile(x, y, 0);
+//			return mapTexturesID[id];
+//		}
+//			return mapTexturesID[id];
+//	}
+
+//	BitmapRef b = Bitmap::Create(TILE_SIZE, TILE_SIZE, Color(0, 0, 0, 0));
+//	return b;
+//}
+
 BitmapRef Spriteset_MapDoom::mapTexture(int x, int y) {
 	if (x >= 0 && y >= 0 && x < mapWidth() && y < mapHeight()) {
 		//int id = ((Scene_Map*)scene_map)->GetTileID(x, y, 0);
+
 		int id = tilemapDown->GetTileDoom(x, y, 0);
+		int id1 = tilemapUp->GetTileDoom(x, y, 1);
 		if (!mapTexturesID[id]) {
 			mapTexturesID[id] = ((Scene_Map*)scene_map)->GetTile(x, y, 0);
 			return mapTexturesID[id];
 		}
+		if (!mapTexturesID[id1]) {
+			mapTexturesID[id1] = ((Scene_Map*)scene_map)->GetTile(x, y, 1);
+			return mapTexturesID[id1];
+		}
 		return mapTexturesID[id];
+		return mapTexturesID[id1];
 	}
 
 	BitmapRef b = Bitmap::Create(TILE_SIZE, TILE_SIZE, Color(0, 0, 0, 0));
@@ -892,6 +918,8 @@ Spriteset_MapDoom::Spriteset_MapDoom() {
 	chipset = ((Scene_Map*)scene_map)->GetChipset();
 
 	tilemapDown = ((Scene_Map*)scene_map)->GetTilemap(0);
+
+	tilemapUp = ((Scene_Map*)scene_map)->GetTilemap(1);
 
 	doomMap = true;
 
@@ -1182,7 +1210,7 @@ void Spriteset_MapDoom::Load_OBJ(std::string name) {
 			}
 
 			surfaces.push_back(s);
-			
+
 		}
 		 // => Wireframe
 		/*else if (line._Starts_with("f ")) {
@@ -1265,7 +1293,7 @@ void Spriteset_MapDoom::Update(bool first) {
 
 				}
 			}
-			
+
 
 			//float x = Main_Data::game_player->GetX() * TILE_SIZE + TILE_SIZE / 2;
 			//float y = Main_Data::game_player->GetY() * TILE_SIZE + TILE_SIZE / 2;

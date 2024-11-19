@@ -112,12 +112,15 @@ void Tilemap::SetTone(Tone tone) {
 
 BitmapRef Tilemap::GetTile(int x, int y, int layer) {
 	return layer_down.DrawTileDoom(x, y);
+	return layer_up.DrawTileDoom(x, y);
 }
 
 int Tilemap::GetTileID(int x, int y, int layer) {
 	return layer_down.GetTileDoom(x, y, layer);
+	return layer_up.GetTileDoom(x, y, layer);
 }
 
 TilemapLayer* Tilemap::GetTilemap(int i) {
 	return &layer_down;
+		return &layer_up;
 }
