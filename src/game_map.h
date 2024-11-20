@@ -700,6 +700,9 @@ namespace Game_Map {
 	int GetTileID(int x, int y, int layer);
 	TilemapLayer* GetTilemap(int i);
 
+   	int GetTileID1(int x, int y, int layer);
+	TilemapLayer* GetTilemap(int i);
+
 	namespace Parallax {
 		struct Params {
 			std::string name;

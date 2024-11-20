@@ -346,7 +346,11 @@ BitmapRef Spriteset_Map::GetEventSprite(int evid) {
 		}
 		if (setBmp) {
 			BitmapRef bitmap = character_sprites[i]->GetBitmap();
-			BitmapRef b = Bitmap::Create(24,32, Color(0, 0, 0, 0));
+			int DoomEventWidth = character_sprites[i]->GetWidth();
+			int DoomEventHeight = character_sprites[i]->GetHeight();
+			Rect rr = character_sprites[i]->GetSrcRect();
+//			BitmapRef b = Bitmap::Create(rr.x,rr.y, Color(0, 0, 0, 0));
+			BitmapRef b = Bitmap::Create(DoomEventWidth,DoomEventHeight, Color(0, 0, 0, 0));
 			Rect r = character_sprites[i]->GetSrcRect();
 
 			// If it's not a tileSprite, and sprite isn't fixed, we need to calc the rotation
@@ -362,22 +366,36 @@ BitmapRef Spriteset_Map::GetEventSprite(int evid) {
 
 				int d = data[Main_Data::game_player->GetDirection() - 1][character_sprites[i]->GetCharacter()->GetDirection()];
 
-				r.y += d * 32;
-				r.y = r.y % (32 * 4);
+				r.y += d * DoomEventHeight;
+//				r.y += d * 32;
+//				r.y = r.y % (32 * 4);
+				r.y = r.y % (DoomEventHeight * 4);
 
 			}
+
+            int spriteIndex = character_sprites[i]->GetCharacter()->GetSpriteIndex();
 
 			if (!character_sprites[i]->GetCharacter()->HasTileSprite()) {
 				if (character_sprites[i]->GetCharacter()->GetSpriteIndex() > 0)
-					r.x += (character_sprites[i]->GetCharacter()->GetSpriteIndex() * 72) % 288;
+//					r.x += (character_sprites[i]->GetCharacter()->GetSpriteIndex() * 72) % 288;
+					r.x += (character_sprites[i]->GetCharacter()->GetSpriteIndex() * (DoomEventWidth * 3)) % 288;
 				if (character_sprites[i]->GetCharacter()->GetSpriteIndex() >= 4)
-					r.y += 128;
+//					r.y += 128;
+                    r.y += (DoomEventHeight * 4);
 			}
 
-			b->Blit(0, 0, *bitmap, r, 255);
+			// This either draws large sprites way too far down on the screen if the second parameters is 0, or it draws the lower half at the right height. I suspect I need to adjust where the bitmap is drawn somewhere.
+
+            if (DoomEventWidth > 24){
+//              b->Blit(0, 0, *bitmap, r, 255);
+                b->Blit(0, -64, *bitmap, r, 255);
+                }
+            else
+                b->Blit(0, 0, *bitmap, r, 255);
+
 			return b;
 		}
-		
+
 	}
 
 	return nullptr;

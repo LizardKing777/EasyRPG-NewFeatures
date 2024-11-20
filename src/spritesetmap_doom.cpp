@@ -814,41 +814,38 @@ void Spriteset_MapDoom::renderMode7() {
 
 
 
-//BitmapRef Spriteset_MapDoom::mapTexture(int x, int y) {
-//	if (x >= 0 && y >= 0 && x < mapWidth() && y < mapHeight()) {
-//		//int id = ((Scene_Map*)scene_map)->GetTileID(x, y, 0);
-//		int id = tilemapDown->GetTileDoom(x, y, 0);
-//		if (!mapTexturesID[id]) {
-//			mapTexturesID[id] = ((Scene_Map*)scene_map)->GetTile(x, y, 0);
-//			return mapTexturesID[id];
-//		}
-//			return mapTexturesID[id];
-//	}
-
-//	BitmapRef b = Bitmap::Create(TILE_SIZE, TILE_SIZE, Color(0, 0, 0, 0));
-//	return b;
-//}
-
 BitmapRef Spriteset_MapDoom::mapTexture(int x, int y) {
 	if (x >= 0 && y >= 0 && x < mapWidth() && y < mapHeight()) {
 		//int id = ((Scene_Map*)scene_map)->GetTileID(x, y, 0);
-
 		int id = tilemapDown->GetTileDoom(x, y, 0);
-		int id1 = tilemapUp->GetTileDoom(x, y, 1);
 		if (!mapTexturesID[id]) {
 			mapTexturesID[id] = ((Scene_Map*)scene_map)->GetTile(x, y, 0);
 			return mapTexturesID[id];
 		}
-		if (!mapTexturesID[id1]) {
-			mapTexturesID[id1] = ((Scene_Map*)scene_map)->GetTile(x, y, 1);
-			return mapTexturesID[id1];
-		}
-		return mapTexturesID[id];
-		return mapTexturesID[id1];
+			return mapTexturesID[id];
 	}
 
 	BitmapRef b = Bitmap::Create(TILE_SIZE, TILE_SIZE, Color(0, 0, 0, 0));
 	return b;
+}
+
+BitmapRef Spriteset_MapDoom::mapTexture1(int x, int y) {
+	if (x >= 0 && y >= 0 && x < mapWidth() && y < mapHeight()) {
+		//int id = ((Scene_Map*)scene_map)->GetTileID(x, y, 0);
+
+		int id1 = tilemapUp->GetTileDoom(x, y, 1);
+
+		if (!mapTexturesID[id1]) {
+			mapTexturesID[id1] = ((Scene_Map*)scene_map)->GetTile(x, y, 1);
+			return mapTexturesID[id1];
+		}
+
+		return mapTexturesID[id1];
+
+	}
+
+	BitmapRef b1 = Bitmap::Create(TILE_SIZE, TILE_SIZE, Color(0, 0, 0, 0));
+	return b1;
 }
 
 void Spriteset_MapDoom::renderTexturedFloor() {
