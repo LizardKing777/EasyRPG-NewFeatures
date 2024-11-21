@@ -31,14 +31,24 @@
 #include "player.h"
 #include "drawable_list.h"
 
+
+
+
+
 Spriteset_Map::Spriteset_Map() {
 	panorama = std::make_unique<Plane>();
 	panorama->SetZ(Priority_Background);
 
 	doom_lower = std::make_unique<Plane>();
 	doom_upper = std::make_unique<Plane>();
+//	doom_upper2 = std::make_unique<Plane>();
+//	doom_sprite = std::make_unique<Plane>();
+
 	doom_lower->SetZ(Priority_Background);
-	doom_upper->SetZ(Priority_BattleAnimation);
+//	doom_upper->SetZ(Priority_BattleAnimation);
+    doom_upper->SetZ(Priority_TilesetBelow);
+//    doom_upper2->SetZ(Priority_EventsBelow);
+//  doom_sprite->SetZ(Priority_Player);
 
 	timer1 = std::make_unique<Sprite_Timer>(0);
 	timer2 = std::make_unique<Sprite_Timer>(1);
@@ -131,6 +141,8 @@ void Spriteset_Map::doomUpdate() {
 	doom->Update(true);
 	doom_lower->SetBitmap(doom->sprite);
 	doom_upper->SetBitmap(doom->spriteUpper);
+//	doom_upper2->SetBitmap(doom->spriteUpper2);
+//	doom_sprite->SetBitmap(doom->spriteSprite);
 }
 
 void Spriteset_Map::ChipsetUpdated() {
@@ -348,8 +360,6 @@ BitmapRef Spriteset_Map::GetEventSprite(int evid) {
 			BitmapRef bitmap = character_sprites[i]->GetBitmap();
 			int DoomEventWidth = character_sprites[i]->GetWidth();
 			int DoomEventHeight = character_sprites[i]->GetHeight();
-			Rect rr = character_sprites[i]->GetSrcRect();
-//			BitmapRef b = Bitmap::Create(rr.x,rr.y, Color(0, 0, 0, 0));
 			BitmapRef b = Bitmap::Create(DoomEventWidth,DoomEventHeight, Color(0, 0, 0, 0));
 			Rect r = character_sprites[i]->GetSrcRect();
 
@@ -387,10 +397,11 @@ BitmapRef Spriteset_Map::GetEventSprite(int evid) {
 			// This either draws large sprites way too far down on the screen if the second parameters is 0, or it draws the lower half at the right height. I suspect I need to adjust where the bitmap is drawn somewhere.
 
             if (DoomEventWidth > 24){
-//              b->Blit(0, 0, *bitmap, r, 255);
-                b->Blit(0, -64, *bitmap, r, 255);
-                }
-            else
+
+                b->Blit(0, 0, *bitmap, r, 255);
+   //             b->Blit(0, -16, *bitmap, r, 255);
+              }
+           else
                 b->Blit(0, 0, *bitmap, r, 255);
 
 			return b;
@@ -417,3 +428,5 @@ int Spriteset_Map::GetTileID(int x, int y, int layer) {
 TilemapLayer* Spriteset_Map::GetTilemap(int i) {
 	return tilemap->GetTilemap(i);
 }
+
+

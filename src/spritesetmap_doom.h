@@ -8,7 +8,9 @@
 #include "async_handler.h"
 #include "sprite.h"
 #include "scene.h"
+#include "sprite_character.h"
 
+class Game_Character;
 class Spriteset_MapDoom {
 public:
 
@@ -74,7 +76,6 @@ public:
 	float renderTexturedFloor(float x, float distance, float angle);
 	void renderTexturedFloor();
 	BitmapRef mapTexture(int x, int y);
-	BitmapRef mapTexture1(int x, int y);
 	void OnTitleSpriteReady(FileRequestResult* result, int i);
 	BitmapRef bitmap;
 	BitmapRef bitmap2;
@@ -106,7 +107,10 @@ public:
 
 	BitmapRef sprite;
 	BitmapRef spriteUpper;
+ //   BitmapRef spriteUpper2;
+//	BitmapRef spriteSprite;
 	BitmapRef lastTile;
+//	BitmapRef lastTile1;
 
 	void pixel(float x, float y, float z, Color c);
 	void line(Point p1, Point p2);
@@ -151,6 +155,6 @@ public:
 	float scaleY = scaleX;
 
 protected:
-
+    	std::vector<std::unique_ptr<Sprite_Character>> character_sprites;
 };
 #endif

@@ -137,6 +137,8 @@ protected:
 
 	std::unique_ptr<Plane> doom_lower;
 	std::unique_ptr<Plane> doom_upper;
+//	std::unique_ptr<Plane> doom_upper2;
+	std::unique_ptr<Plane> doom_sprite;
 };
 
 inline int Spriteset_Map::GetRenderOx() const {
