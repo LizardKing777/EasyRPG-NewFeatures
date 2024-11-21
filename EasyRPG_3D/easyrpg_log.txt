@@ -1,0 +1,2489 @@
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 12
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 9 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 13
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:16] Debug: XY 8 14
+[2024-11-21 10:50:16] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 8 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 9 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 9 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 14
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:17] Debug: XY 10 15
+[2024-11-21 10:50:17] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:18] Debug: XY 10 15
+[2024-11-21 10:50:18] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 15
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 14
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:19] Debug: XY 6 13
+[2024-11-21 10:50:19] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 13
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 12
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 11
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 10
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:20] Debug: XY 6 9
+[2024-11-21 10:50:20] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 9
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 9
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 9
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 9
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 8
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 7
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 6
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:21] Debug: XY 6 5
+[2024-11-21 10:50:21] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 5
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 4
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 3
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 2
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 1
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 1
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:22] Debug: XY 6 1
+[2024-11-21 10:50:22] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 1
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 0
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:23] Debug: XY 6 49
+[2024-11-21 10:50:23] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 5 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 4 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 4 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 4 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 4 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 4 3
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:26] Debug: XY 4 4
+[2024-11-21 10:50:26] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 4 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 3 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 2 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:27] Debug: XY 1 4
+[2024-11-21 10:50:27] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 3
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 2
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:29] Debug: XY 2 1
+[2024-11-21 10:50:29] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 3 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:30] Debug: XY 4 2
+[2024-11-21 10:50:30] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 2
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 2
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 2
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 4 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 5 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 6 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:31] Debug: XY 7 1
+[2024-11-21 10:50:31] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 7 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 7 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 7 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 7 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 7 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 7 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 8 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 9 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 10 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 11 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 11 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 11 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 11 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 11 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:32] Debug: XY 11 1
+[2024-11-21 10:50:32] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 11 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 12 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 13 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 14 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 15 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:33] Debug: XY 15 1
+[2024-11-21 10:50:33] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 15 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 16 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 17 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:34] Debug: XY 18 1
+[2024-11-21 10:50:34] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 18 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 18 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 19 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 20 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:35] Debug: XY 21 1
+[2024-11-21 10:50:35] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:36] Debug: XY 19 2
+[2024-11-21 10:50:36] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 3
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 4
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:37] Debug: XY 19 5
+[2024-11-21 10:50:37] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 5
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 5
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 5
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 5
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 5
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 5
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 5
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 19 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 6
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:38] Debug: XY 18 7
+[2024-11-21 10:50:38] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 7
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 7
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 7
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 7
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 7
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 8
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 17 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 9
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 10
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 11
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 11
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 11
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 11
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 11
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 11
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:39] Debug: XY 18 11
+[2024-11-21 10:50:39] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 11
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 12
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 13
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 14
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 15
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:40] Debug: XY 18 15
+[2024-11-21 10:50:40] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 15
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:41] Debug: XY 18 16
+[2024-11-21 10:50:41] Debug: Action false
+[2024-11-21 10:50:43] Debug: Actor 1: Removing item 44 (of type 2) from equipment slot 2 (needs type 1)
+[2024-11-21 10:50:43] Debug: Actor 1: Removing item 67 from equipment slot 4 (Not equippable by this actor)
+[2024-11-21 10:51:24] Debug: EasyRPG Player 0.8 (2024-11-19) started
+[2024-11-21 10:51:24] Debug: =======================================
+[2024-11-21 10:51:24] Debug: CLI: 
+[2024-11-21 10:51:24] Debug: Clock: StdSteady steady=true period=ns (1 / 1000000000)
+[2024-11-21 10:51:24] Debug: Seeded the RNG with 1732211483.
+[2024-11-21 10:51:24] Debug: SDL2: RendererInfo hw=true sw=false vsync=true
+[2024-11-21 10:51:24] Debug: SDL2: Detected format (0) SDL_PIXELFORMAT_ARGB8888 : rank=(2)
+[2024-11-21 10:51:24] Debug: SDL2: Selected Pixel Format SDL_PIXELFORMAT_ARGB8888
+[2024-11-21 10:51:24] Debug: Game and Save Directory:
+[2024-11-21 10:51:24] Debug: 1: [Native] 
+[2024-11-21 10:51:24] Debug: Loading game Untitled
+[2024-11-21 10:51:24] Debug: EXEReader: EXFONT resource found (DE 0xfd720; 0x103760; len 0x2168)
+[2024-11-21 10:51:24] Debug: Engine configured as: 2k=false 2k3=true MajorUpdated=true Eng=true
+[2024-11-21 10:51:24] Debug: Adding K:\Games\RPG Maker 2003 v1.12 ZIPPYRELEASE\RTP to RTP path
+[2024-11-21 10:51:25] Debug: RTP is "Official English" (675/675)
+[2024-11-21 10:51:25] Debug: Adding K:\Games\rpg2003\RTP to RTP path
+[2024-11-21 10:51:26] Debug: RTP is "RPG Advocate English Translation" (675/675)
+[2024-11-21 10:51:26] Debug: Patch configuration: dynrpg=true maniac=true key-patch=true common-this=true pic-unlock=true 2k3-commands=false anti-lag-switch=0
+[2024-11-21 10:51:26] Debug: Actor 1: Removing item 44 (of type 2) from equipment slot 2 (needs type 1)
+[2024-11-21 10:51:26] Debug: Actor 1: Removing item 67 from equipment slot 4 (Not equippable by this actor)
+[2024-11-21 10:51:26] Debug: Cannot find: Font/Font2
+[2024-11-21 10:51:26] Debug: Cannot find: Logo/LOGO1
+[2024-11-21 10:51:26] Debug: EXEReader: LOGO1 resource found (DE 0xfd5c0; 0xfdc28; len 0x3d38)
+[2024-11-21 10:51:27] Debug: Resolution changed to 320x240
+[2024-11-21 10:51:27] Debug: Loaded Map Map0001.lmu
+[2024-11-21 10:51:27] Debug: Tree: MAP0001
+[2024-11-21 10:51:27] Debug: Invalid read sw[101]!
+[2024-11-21 10:51:28] Debug: Game uses RTP "Official English"
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Drache (288x256 < 1152x768 < 288x256)
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Drache (288x256 < 1152x768 < 288x256) [8x]
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Menschen (288x256 < 384x384 < 288x256)
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Menschen (288x256 < 384x384 < 288x256) [4x]
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Monster (288x256 < 960x512 < 288x256)
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Monster (288x256 < 960x512 < 288x256) [4x]
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Schmetterling (288x256 < 192x128 < 288x256)
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Schmetterling (288x256 < 192x128 < 288x256) [4x]
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Vampir (288x256 < 576x384 < 288x256)
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$Vampir (288x256 < 576x384 < 288x256) [4x]
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$SLIME (288x256 < 576x384 < 288x256)
+[2024-11-21 10:51:28] Debug: Image size out of bounds: CharSet/$SLIME (288x256 < 576x384 < 288x256) [4x]
+[2024-11-21 10:51:28] Debug: Invalid read sw[101]!
+[2024-11-21 10:51:29] Debug: Map size 50 50
+[2024-11-21 10:51:32] Debug: XY 9 5
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 5
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 5
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 5
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 5
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 5
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 4
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:32] Debug: XY 9 3
+[2024-11-21 10:51:32] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 3
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 3
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 3
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 3
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 3
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 3
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:33] Debug: XY 9 2
+[2024-11-21 10:51:33] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:34] Debug: XY 8 3
+[2024-11-21 10:51:34] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 8 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 8 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 7 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 6 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 5 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:35] Debug: XY 4 3
+[2024-11-21 10:51:35] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 3
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 3
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 4 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 3 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 4
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 2 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:36] Debug: XY 1 5
+[2024-11-21 10:51:36] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 1 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 1 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 1 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 1 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 1 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 1 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 1 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 0 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:37] Debug: XY 49 5
+[2024-11-21 10:51:37] Debug: Action false
+[2024-11-21 10:51:40] Debug: Actor 1: Removing item 44 (of type 2) from equipment slot 2 (needs type 1)
+[2024-11-21 10:51:40] Debug: Actor 1: Removing item 67 from equipment slot 4 (Not equippable by this actor)
