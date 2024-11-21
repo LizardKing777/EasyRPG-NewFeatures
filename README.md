@@ -1,4 +1,4 @@
-Test project is in /EasyRPG3D
+Test project is in /EasyRPG_3D
 
 Changes:
 
