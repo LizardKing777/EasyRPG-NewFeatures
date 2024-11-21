@@ -1,3 +1,5 @@
+Test project is in /EasyRPG3D
+
 Changes:
 
 1. Support for larger charsets.
