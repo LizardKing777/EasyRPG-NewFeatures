@@ -329,7 +329,33 @@ void Game_Player::UpdateNextMovementAction() {
 		return;
 	}
 
-	CheckEventTriggerHere({ lcf::rpg::EventPage::Trigger_collision }, false);
+
+
+
+           	int collision_x = GetX();
+            int collision_y = GetY();
+
+//          int collision_x = Game_Map::XwithDirection(GetX(), 0);
+//      	int collision_y = Game_Map::YwithDirection(GetY(), 0);
+            int collision_up     = collision_y + 1;
+			int collision_down = collision_y - 1;
+            int collision_right  = collision_x + 1;
+			int collision_left = collision_x - 1;
+
+
+
+            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_x, collision_y, false);
+            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_x, collision_up, false);
+            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_x, collision_down, false);
+            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_right, collision_y, false);
+ 			CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_left, collision_y, false);
+
+//            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_right,     collision_up, false);
+//            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision},  collision_left, collision_down, false);
+//            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_left, collision_up, false);
+// 			CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_collision}, collision_right, collision_down, false);
+
+//          CheckEventTriggerHere({ lcf::rpg::EventPage::Trigger_collision }, false);
 
 	if (Game_Map::IsAnyEventStarting()) {
 		return;
@@ -405,13 +431,53 @@ void Game_Player::UpdateNextMovementAction() {
 
 
 	if (move_dir >= 0) {
-		SetThrough((Player::debug_flag && Input::IsPressed(Input::DEBUG_THROUGH)) || data()->move_route_through);
+            SetThrough((Player::debug_flag && Input::IsPressed(Input::DEBUG_THROUGH)) || data()->move_route_through);
 		Move(move_dir);
 		ResetThrough();
-		if (IsStopping()) {
+
+
+
 			int front_x = Game_Map::XwithDirection(GetX(), GetDirection());
 			int front_y = Game_Map::YwithDirection(GetY(), GetDirection());
-			CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_touched, lcf::rpg::EventPage::Trigger_collision}, front_x, front_y, false);
+            int self_x = GetX();
+            int self_y = GetY();
+            int self_dir = GetDirection();
+
+        	int front_id = Game_Map::CheckEvent(front_x, front_y);
+
+
+            for (auto& ev : Game_Map::GetEvents()) {
+//          const auto facing = ev.GetFacing();
+            if (ev.IsActive()
+                && ev.GetX() == front_x
+				&& ev.GetY() == front_y
+				&& ev.GetLayer() == lcf::rpg::EventPage::Layers_same
+                 && ev.GetTrigger() == lcf::rpg::EventPage::Trigger_touched
+//              && ev.GetFacing() > 0
+				|| ev.IsMoving()
+//              || ev.GetDirection() ==  self_dir
+//              || ev.GetDirection() !=  self_dir
+
+//      		|| ev.IsStopping()
+//      		|| IsMoving()
+                )
+				 {
+            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_touched}, front_x, front_y, false);
+ 		}
+            else
+      		if (IsStopping()) {
+                if (ev.IsActive()
+                && ev.GetX() == self_x
+				&& ev.GetY() == self_y
+				&& ev.GetLayer() != lcf::rpg::EventPage::Layers_same) {
+
+            CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_touched}, self_x, self_y, false);
+ //           CheckEventTriggerHere({lcf::rpg::EventPage::Trigger_touched}, false);
+
+				}
+}
+
+
 		}
 	}
 
@@ -449,6 +515,7 @@ void Game_Player::Update() {
 
 	if (IsStopping()) {
 		if (data()->boarding) {
+
 			// Boarding completed
 			data()->aboard = true;
 			data()->boarding = false;
@@ -456,6 +523,7 @@ void Game_Player::Update() {
 			SetFacing(Left);
 
 			auto* vehicle = GetVehicle();
+
 			SetMoveSpeed(vehicle->GetMoveSpeed());
 		}
 		if (data()->unboarding) {
@@ -467,7 +535,7 @@ void Game_Player::Update() {
 	auto* vehicle = GetVehicle();
 
 	if (IsAboard() && vehicle) {
-		vehicle->SyncWithRider(this);
+          vehicle->SyncWithRider(this);     //
 	}
 
 	UpdatePan();
@@ -497,51 +565,129 @@ bool Game_Player::CheckActionEvent() {
 	int front_x;  // TODO - PIXELMOVE
 	int front_y;
 
-	if (true) {
-		front_x = real_x * SCREEN_TILE_SIZE;
-		front_y = real_y * SCREEN_TILE_SIZE;
-		front_x = round(front_x + GetDxFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
-		front_y = round(front_y + GetDyFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
-	}
-	else {
+//	if (true) {
+//		front_x = real_x * SCREEN_TILE_SIZE;
+//		front_y = real_y * SCREEN_TILE_SIZE;
+//		front_x = round(front_x + GetDxFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
+//		front_y = round(front_y + GetDyFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
+//	}
+//	else {
+
 		front_x = Game_Map::XwithDirection(GetX(), GetDirection());
 		front_y = Game_Map::YwithDirection(GetY(), GetDirection());
-	} // END - PIXELMOVE
+        int action_x = GetX();
+        int action_y = GetY();
+        int action_up     = action_y + 1;
+        int action_down = action_y - 1;
+        int action_right  = action_x + 1;
+        int action_left = action_x - 1;
+        int self_dir = GetDirection();
+       	int front_id = Game_Map::CheckEvent(front_x, front_y);
+        c2Circle self;
+		c2Circle other;
 
-	result |= CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_touched, lcf::rpg::EventPage::Trigger_collision}, front_x, front_y, true);
-	result |= CheckEventTriggerHere({lcf::rpg::EventPage::Trigger_action}, true);
+            for (auto& ev : Game_Map::GetEvents()) {
+//          const auto facing = ev.GetFacing();
+            if (ev.IsActive()
+                && ev.GetX() == front_x
+				&& ev.GetY() == front_y
+				&& ev.GetLayer() == lcf::rpg::EventPage::Layers_same
+                && ev.GetTrigger() == lcf::rpg::EventPage::Trigger_action
+                && c2CircletoCircle(self, other)
+                || ev.IsMoving()
+//              || ev.GetDirection() ==  self_dir
+//              || ev.GetDirection() !=  self_dir
+                || ev.IsStopping()
+        		|| IsMoving()
+                )
+				 {
+                if (Input::IsTriggered(Input::DECISION)
+                || Input::IsPressed(Input::RIGHT)
+                || Input::IsPressed(Input::LEFT)
+                || Input::IsPressed(Input::DOWN)
+                || Input::IsPressed(Input::UP)               ) {
+
+//          CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_touched}, front_x, front_y, false);
+
+// This was the culprit for why activating events wasn't working! - LK
+//	} // END - PIXELMOVE
+
+//  	result |= CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_touched, lcf::rpg::EventPage::Trigger_collision}, front_x, front_y, true);
+
+        result |= CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, front_x, front_y, true);
+
+        result |= CheckEventTriggerHere({lcf::rpg::EventPage::Trigger_action}, true);
+    }
+
+            }
+
+             if (ev.IsActive()
+                && ev.GetX() == action_x
+				&& ev.GetY() == action_x
+				&& ev.GetLayer() != lcf::rpg::EventPage::Layers_same
+                && ev.GetTrigger() == lcf::rpg::EventPage::Trigger_action
+//              && ev.GetFacing() > 0
+				|| ev.IsMoving()
+//              || ev.GetDirection() ==  self_dir
+//              || ev.GetDirection() !=  self_dir
+
+                || ev.IsStopping()
+        		|| IsMoving()
+                )
+                {
+        result |= CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, action_x, action_y, true);
+
+        result |= CheckEventTriggerHere({lcf::rpg::EventPage::Trigger_action}, true);
+                }
+
+//            result |=CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, action_x, action_y, false);
+//            result |=CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, action_x, action_up, false);
+//            result |=CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, action_x, action_down, false);
+//            result |=CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, action_right, action_y, false);
+// 			result |=CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, action_left, action_y, false);
+
+// }
+
+//          }
 
 	// Counter tile loop stops only if you talk to an action event.
 	bool got_action = CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, front_x, front_y, true);
 	// RPG_RT allows maximum of 3 counter tiles
 	for (int i = 0; !got_action && i < 3; ++i) {
-		/*
+
 		if (!Game_Map::IsCounter(front_x, front_y)) {
 			break;
 		}
 
 		front_x = Game_Map::XwithDirection(front_x, GetDirection());
 		front_y = Game_Map::YwithDirection(front_y, GetDirection());
-		*/
 
-		if (true) { // TODO - PIXELMOVE
-			if (!Game_Map::IsCounter(front_x / SCREEN_TILE_SIZE, front_y / SCREEN_TILE_SIZE)) {
-				break;
-			}
-			front_x = round(front_x + GetDxFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
-			front_y = round(front_y + GetDyFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
-		}
-		else {
-			if (!Game_Map::IsCounter(front_x, front_y)) {
-				break;
-			}
-			front_x = Game_Map::XwithDirection(front_x, GetDirection());
-			front_y = Game_Map::YwithDirection(front_y, GetDirection());
-		} // END PIXELMOVE
+
+//		if (true) { // TODO - PIXELMOVE
+
+// This code was making counters not work. -LK
+
+//			if (!Game_Map::IsCounter(front_x / SCREEN_TILE_SIZE, front_y / SCREEN_TILE_SIZE)) {
+//				break;
+//			}
+//			front_x = round(front_x + GetDxFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
+//			front_y = round(front_y + GetDyFromDirection(GetDirection()) * SCREEN_TILE_SIZE);
+//		}
+//		else {
+	//		if (!Game_Map::IsCounter(front_x, front_y)) {
+	//			break;
+//			}
+//  		front_x = Game_Map::XwithDirection(front_x, GetDirection());
+//          front_y = Game_Map::YwithDirection(front_y, GetDirection());
+//          } // END PIXELMOVE
 
 		got_action |= CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, front_x, front_y, true);
 	}
 	return result || got_action;
+}
+
+
+
 }
 
 bool Game_Player::CheckEventTriggerHere(TriggerSet triggers, bool triggered_by_decision_key) {
@@ -566,10 +712,12 @@ bool Game_Player::CheckEventTriggerHere(TriggerSet triggers, bool triggered_by_d
 	}
 }
 */
-
+        int front_x = Game_Map::XwithDirection(GetX(), GetDirection());
+        int front_y = Game_Map::YwithDirection(GetY(), GetDirection());
 	if (true) {
 		c2Circle self;
 		c2Circle other;
+
 		self.p = c2V(((float)GetX() / (float)SCREEN_TILE_SIZE) + 0.5, ((float)GetY() / (float)SCREEN_TILE_SIZE) + 0.5);
 		self.r = 0.25 - Epsilon;
 		other.r = 0.5;
@@ -577,12 +725,13 @@ bool Game_Player::CheckEventTriggerHere(TriggerSet triggers, bool triggered_by_d
 			const auto trigger = ev.GetTrigger();
 			other.p = c2V(ev.real_x + 0.5, ev.real_y + 0.5);
 			if (ev.IsActive()
-				&& ev.GetLayer() == lcf::rpg::EventPage::Layers_same
+//				&& ev.GetLayer() == lcf::rpg::EventPage::Layers_same
 				&& trigger >= 0
 				&& triggers[trigger]
 				&& c2CircletoCircle(self, other)) {
 				SetEncounterCalling(false);
-				result |= ev.ScheduleForegroundExecution(triggered_by_decision_key, true);
+//      		result |= ev.ScheduleForegroundExecution(triggered_by_decision_key, true);
+                result |= CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, front_x, front_y, true);
 			}
 		}
 	}
@@ -592,11 +741,12 @@ bool Game_Player::CheckEventTriggerHere(TriggerSet triggers, bool triggered_by_d
 			if (ev.IsActive()
 				&& ev.GetX() == GetX()
 				&& ev.GetY() == GetY()
-				&& ev.GetLayer() != lcf::rpg::EventPage::Layers_same
+//				&& ev.GetLayer() != lcf::rpg::EventPage::Layers_same
 				&& trigger >= 0
 				&& triggers[trigger]) {
 				SetEncounterCalling(false);
-				result |= ev.ScheduleForegroundExecution(triggered_by_decision_key, true);
+//      		result |= ev.ScheduleForegroundExecution(triggered_by_decision_key, true);
+                result |= CheckEventTriggerThere({lcf::rpg::EventPage::Trigger_action}, front_x, front_y, true);
 			}
 		}
 	} // END - PIXELMOVE
@@ -615,7 +765,7 @@ bool Game_Player::CheckEventTriggerThere(TriggerSet triggers, int x, int y, bool
 		if (ev.IsActive()
 				&& ev.GetX() == x
 				&& ev.GetY() == y
-				&& ev.GetLayer() == lcf::rpg::EventPage::Layers_same
+//				&& ev.GetLayer() == lcf::rpg::EventPage::Layers_same
 				&& trigger >= 0
 				&& triggers[trigger]) {
 			SetEncounterCalling(false);
@@ -668,9 +818,10 @@ bool Game_Player::GetOnVehicle() {
 		vehicle->StartAscent();
 		Main_Data::game_player->SetFlying(vehicle->IsFlying());
 	} else {
-		const auto front_x = Game_Map::XwithDirection(GetX(), GetDirection());
-		const auto front_y = Game_Map::YwithDirection(GetY(), GetDirection());
-
+//              const auto front_x = Game_Map::XwithDirection(GetX(), GetDirection());
+//              const auto front_y = Game_Map::YwithDirection(GetY(), GetDirection());
+        int front_x = Game_Map::XwithDirection(GetX(), GetDirection());
+        int front_y = Game_Map::YwithDirection(GetY(), GetDirection());
 		vehicle = Game_Map::GetVehicle(Game_Vehicle::Ship);
 		if (!vehicle->IsInPosition(front_x, front_y)) {
 			vehicle = Game_Map::GetVehicle(Game_Vehicle::Boat);
@@ -684,7 +835,13 @@ bool Game_Player::GetOnVehicle() {
 		}
 
 		SetThrough(true);
+		SetX(front_x);
+		SetY(front_y);
 		Move(GetDirection());
+        Move(GetDirection());
+   		Move(GetDirection());
+		Move(GetDirection());
+
 		// FIXME: RPG_RT resets through to move_route_through || not visible?
 		ResetThrough();
 

@@ -67,10 +67,10 @@ Game_Vehicle::Game_Vehicle(Type type)
 			break;
 	}
 
-	if (true) { // TODO - PIXELMOVE
+//	if (true) { // TODO - PIXELMOVE
 		real_x = (float)GetX();
 		real_y = (float)GetY();
-	} // END PIXELMOVE
+//	} // END PIXELMOVE
 
 }
 
@@ -130,16 +130,17 @@ bool Game_Vehicle::IsAboard() const {
 void Game_Vehicle::SyncWithRider(const Game_Character* rider) {
 	SetProcessed(true);
 	SetMapId(rider->GetMapId());
-	SetX(rider->GetX());
-	SetY(rider->GetY());
+
+//	SetX(rider->GetX());
+//	SetY(rider->GetY());
 	SetDirection(rider->GetDirection());
 	SetFacing(rider->GetFacing());
 	SetRemainingStep(rider->GetRemainingStep());
 
-	if (true) { // TODO - PIXELMOVE
+//        if (true) { // TODO - PIXELMOVE
 		real_x = rider->real_x;
 		real_y = rider->real_y;
-	} // END - PIXELMOVE
+//        } // END - PIXELMOVE
 
 	// RPG_RT doesn't copy jumping chunks
 
