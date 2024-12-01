@@ -481,14 +481,14 @@ void Game_Player::UpdateNextMovementAction() {
 		}
 	}
 
-	if (IsStopping()) {
+//	if (IsStopping()) {             // This was preventing activating events while moving
 		if (Input::IsTriggered(Input::DECISION)) {
 			if (!GetOnOffVehicle()) {
 				CheckActionEvent();
 			}
 		}
-		return;
-	}
+//		return;
+//	}
 
 	Main_Data::game_party->IncSteps();
 	if (Main_Data::game_party->ApplyStateDamage()) {
@@ -820,6 +820,10 @@ bool Game_Player::GetOnVehicle() {
 	} else {
 //              const auto front_x = Game_Map::XwithDirection(GetX(), GetDirection());
 //              const auto front_y = Game_Map::YwithDirection(GetY(), GetDirection());
+
+        int begin_x = Main_Data::game_player->GetX();
+        int begin_y = Main_Data::game_player->GetY();
+
         int front_x = Game_Map::XwithDirection(GetX(), GetDirection());
         int front_y = Game_Map::YwithDirection(GetY(), GetDirection());
 		vehicle = Game_Map::GetVehicle(Game_Vehicle::Ship);
@@ -835,19 +839,31 @@ bool Game_Player::GetOnVehicle() {
 		}
 
 		SetThrough(true);
-		SetX(front_x);
-		SetY(front_y);
-		Move(GetDirection());
-        Move(GetDirection());
-   		Move(GetDirection());
-		Move(GetDirection());
 
+
+
+//		SetX(front_x);
+//		SetY(front_y);
+//		Move(GetDirection());
+ //       Move(GetDirection());
+ //		Move(GetDirection());
+//		Move(GetDirection());
+
+        c2v vector = c2V(GetDxFromDirection(GetDirection()), GetDyFromDirection(GetDirection()));
+//		c2v vector = c2V(front_x - begin_x, front_y - begin_x);
+//		float length = c2Len(vector);
+//        c2v vectorNorm = c2Div(vector, length);
+		float step_size = 384   / 256.0;
+        MoveVector(c2Mulvs(vector, step_size));
+
+//		SetThrough(false);
 		// FIXME: RPG_RT resets through to move_route_through || not visible?
 		ResetThrough();
 
 		data()->vehicle = vehicle->GetVehicleType();
 		data()->preboard_move_speed = GetMoveSpeed();
 		data()->boarding = true;
+
 	}
 
 	Main_Data::game_system->SetBeforeVehicleMusic(Main_Data::game_system->GetCurrentBGM());

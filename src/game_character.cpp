@@ -667,14 +667,35 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 		}
 	}
 	//Test Collision With Map - Map collision has high priority, so it is tested last
+
+
+    int player_x = player->GetX();
+    int player_y = player->GetY();
+
+
+	int map_width = Game_Map::GetTilesX();
+    int map_widthLeft = map_width * -1;
+    int map_widthRight  = map_width * 2;
+
+    if (player_x == -1)
+    {
+        SetX(map_width);
+    }
+
 	int left = floor((self.p.x - 0.5));
 	int right = floor((self.p.x - 0.5) + 1);
 	int top = floor((self.p.y - 0.5));
 	int bottom = floor((self.p.y - 0.5) + 1);
-	for (int x = 0; x <= (right - left + 1); x++) {
-		for (int y = 0; y <= (bottom - top + 1); y++) {
+
+
+//          if (!Game_Map::LoopHorizontal() || !Game_Map::LoopVertical()   ) {
+
+            for     (int x = 0; x <= (right - left + 1); x++)   {
+
+            for (int y = 0; y <= (bottom - top + 1); y++) {
 			int tile_x = left + x;
 			int tile_y = top + y;
+
 			if (!Game_Map::IsPassableTile(&(*this), 0x08, tile_x, tile_y)) {
 				tile.min = c2V(tile_x, tile_y);
 				tile.max = c2V(tile_x + 1, tile_y + 1);
@@ -685,13 +706,19 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 				}
 			}
 		}
-	}
-	real_x = self.p.x - 0.5;
-	real_y = self.p.y - 0.5;
-	//real_x = round((self.p.x - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
-	//real_y = round((self.p.y - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
+
+		}
+//      }
+
+
+
+            real_x = self.p.x - 0.5;
+            real_y = self.p.y - 0.5;
+//      real_x = round((self.p.x - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
+//      real_y = round((self.p.y - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
 	SetX(round(real_x));
 	SetY(round(real_y));
+//      Output::Warning("right {},  left  {},bottom {},top{}  ", right, left, bottom,top     );
 	if (abs(real_x - last_x) <= Epsilon && abs(real_y - last_y) <= Epsilon) {
 		SetRemainingStep(0);
 		return false; //If there is no expressive change in the character's position, it is treated as if he has not moved.
@@ -903,6 +930,10 @@ bool Game_Character::BeginMoveRouteJump(int32_t& current_index, const lcf::rpg::
 }
 
 bool Game_Character::Jump(int x, int y) {
+
+   		real_x = (float)x;
+		real_y = (float)y;
+
 	if (!IsStopping()) {
 		return true;
 	}
@@ -953,10 +984,53 @@ bool Game_Character::Jump(int x, int y) {
 
 	SetBeginJumpX(begin_x);
 	SetBeginJumpY(begin_y);
-	SetX(x);
-	SetY(y);
-	SetJumping(true);
-	SetRemainingStep(SCREEN_TILE_SIZE);
+//	SetX(x);
+//	SetY(y);
+    SetX(real_x);
+	SetY(real_y);
+//  SetJumping(true);
+//      SetRemainingStep(SCREEN_TILE_SIZE);
+
+if (true) { // TODO - PIXELMOVE
+
+
+
+//      SetDirection(GetDirection());
+        c2v vector = c2V(GetDxFromDirection(GetDirection()), GetDyFromDirection(GetDirection()));
+//      c2v vector = c2V(real_x - begin_x, real_y - begin_y);
+		float length = c2Len(vector);
+        c2v vectorNorm = c2Div(vector, length);
+        float step_size = GetStepSize();
+//      MoveVector(c2Mulvs(vectorNorm, step_size));
+  		MoveVector(c2Mulvs(c2Norm(vectorNorm), step_size));
+//      SetRemainingStep(0);
+}
+
+
+/* Reference material
+    c2v vector = c2V(GetDxFromDirection(GetDirection()), GetDyFromDirection(GetDirection()));
+	c2v vector = c2V(target_x - real_x, target_y - real_y);
+	float length = c2Len(vector);
+	c2v vectorNorm = c2Div(vector, length);
+	float step_size = GetStepSize();
+	if (length > step_size) {
+		move_success = MoveVector(c2Mulvs(vectorNorm, step_size));
+	}
+	else {
+		move_success = MoveVector(vector);
+		is_moving_toward_target = false;
+	}
+	if (!move_success) {
+		if (is_move_toward_target_skippable) {
+			is_moving_toward_target = false;
+		}
+		else if (c2Dot(vectorNorm, move_direction) <= 0) {
+			is_moving_toward_target = false;
+			forced_skip = true;
+		}
+	}
+
+*/
 
 	return true;
 }
