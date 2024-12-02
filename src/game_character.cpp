@@ -37,6 +37,10 @@
 #include <unordered_set>
 #include "cute_c2.h"
 
+#include <lcf/data.h>
+#include <lcf/rpg/terrain.h>
+#include <lcf/reader_util.h>
+
 Game_Character::Game_Character(Type type, lcf::rpg::SaveMapEventBase* d) :
 	_type(type), _data(d)
 {
@@ -588,6 +592,28 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 	if (abs(vx) <= Epsilon && abs(vy) <= Epsilon) {
 		return false;
 	}
+
+    if (IsJumping())
+    {
+        return false;
+    }
+
+
+    bool vehicle = Main_Data::game_player->InVehicle();
+    bool airship = Main_Data::game_player->InAirship();
+    bool flying = Main_Data::game_player->IsFlying();
+    bool boarding = Main_Data::game_player->IsBoardingOrUnboarding();
+
+    if (boarding)
+    {
+        return false;
+    }
+
+    if (flying)
+    {
+
+    }
+
 	UpdateFacing();
 	SetRemainingStep(1); //little hack to make the character step anim
 	float last_x = real_x;
@@ -671,16 +697,13 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 
     int player_x = player->GetX();
     int player_y = player->GetY();
-
+	const auto front_x = Game_Map::XwithDirection(GetX(), GetDirection());
+	const auto front_y = Game_Map::YwithDirection(GetY(), GetDirection());
 
 	int map_width = Game_Map::GetTilesX();
-    int map_widthLeft = map_width * -1;
-    int map_widthRight  = map_width * 2;
+	int map_height = Game_Map::GetTilesY();
 
-    if (player_x == -1)
-    {
-        SetX(map_width);
-    }
+
 
 	int left = floor((self.p.x - 0.5));
 	int right = floor((self.p.x - 0.5) + 1);
@@ -688,7 +711,6 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 	int bottom = floor((self.p.y - 0.5) + 1);
 
 
-//          if (!Game_Map::LoopHorizontal() || !Game_Map::LoopVertical()   ) {
 
             for     (int x = 0; x <= (right - left + 1); x++)   {
 
@@ -696,19 +718,71 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 			int tile_x = left + x;
 			int tile_y = top + y;
 
+			if ((tile_x < 0)  || (tile_x >= map_width)  )
+            {
+                tile_x = (tile_x % map_width + map_width) % map_width;
+            }
+
+            if ((tile_y < 0) || (tile_y >= map_height) )
+            {
+                tile_y = (tile_y % map_height + map_height) % map_height;
+            }
+
+
+            if (!Game_Map::IsPassableTile(&(*this), 0x08, front_x, front_y)) {
+
+            }
+
+
 			if (!Game_Map::IsPassableTile(&(*this), 0x08, tile_x, tile_y)) {
 				tile.min = c2V(tile_x, tile_y);
 				tile.max = c2V(tile_x + 1, tile_y + 1);
+
+            if ((self.p.x < 0)  )
+            {
+            self.p.x = self.p.x + map_width;
+            }
+
+            if ((self.p.x >= map_width)  )
+            {
+            self.p.x = self.p.x - map_width;
+            }
+
+            if ((self.p.y < 0)  )
+            {
+            self.p.y = self.p.y + map_width;
+            }
+
+            if ( (self.p.y >= map_height) )
+            {
+            self.p.y = self.p.y - map_width;
+            }
+
+
+
+ //       Output::Warning("vehicle {},  airship  {}", vehicle, airship     );
 				c2CircletoAABBManifold(self, tile, &manifold);
 				if (manifold.count > 0) {
 					self.p.x -= manifold.n.x * manifold.depths[0] * Game_Map::IsPassableTile(&(*this), 0x08, self.p.x, tile_y);
 					self.p.y -= manifold.n.y * manifold.depths[0] * Game_Map::IsPassableTile(&(*this), 0x08, tile_x, self.p.y);
+			     if (Main_Data::game_player)
+    {
+                    int terrain_id = Game_Map::GetTerrainTag(tile_x, tile_y);
+					const lcf::rpg::Terrain* terrain = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_id);
+
+
+                    bool boatpass = terrain->boat_pass;
+                    bool shippass = terrain->ship_pass;
+                    bool flypass = terrain->airship_pass;
+    }
+
+
 				}
-			}
-		}
+
 
 		}
-//      }
+            }
+		}
 
 
 
@@ -718,11 +792,12 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 //      real_y = round((self.p.y - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
 	SetX(round(real_x));
 	SetY(round(real_y));
-//      Output::Warning("right {},  left  {},bottom {},top{}  ", right, left, bottom,top     );
+
 	if (abs(real_x - last_x) <= Epsilon && abs(real_y - last_y) <= Epsilon) {
 		SetRemainingStep(0);
 		return false; //If there is no expressive change in the character's position, it is treated as if he has not moved.
 	}
+
 	return true;
 }
 
@@ -984,14 +1059,14 @@ bool Game_Character::Jump(int x, int y) {
 
 	SetBeginJumpX(begin_x);
 	SetBeginJumpY(begin_y);
-//	SetX(x);
-//	SetY(y);
-    SetX(real_x);
-	SetY(real_y);
-//  SetJumping(true);
-//      SetRemainingStep(SCREEN_TILE_SIZE);
+  	SetX(x);
+  	SetY(y);
+//  SetX(real_x);
+//  SetY(real_y);
+    SetJumping(true);
+        SetRemainingStep(SCREEN_TILE_SIZE);
 
-if (true) { // TODO - PIXELMOVE
+ /*     if (true) { // TODO - PIXELMOVE
 
 
 
@@ -1005,7 +1080,7 @@ if (true) { // TODO - PIXELMOVE
   		MoveVector(c2Mulvs(c2Norm(vectorNorm), step_size));
 //      SetRemainingStep(0);
 }
-
+*/
 
 /* Reference material
     c2v vector = c2V(GetDxFromDirection(GetDirection()), GetDyFromDirection(GetDirection()));

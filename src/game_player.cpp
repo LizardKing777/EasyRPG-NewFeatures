@@ -583,9 +583,10 @@ bool Game_Player::CheckActionEvent() {
         int action_left = action_x - 1;
         int self_dir = GetDirection();
        	int front_id = Game_Map::CheckEvent(front_x, front_y);
-        c2Circle self;
-		c2Circle other;
+//        c2Circle self;
+//		c2Circle other;
 
+//
             for (auto& ev : Game_Map::GetEvents()) {
 //          const auto facing = ev.GetFacing();
             if (ev.IsActive()
@@ -593,7 +594,7 @@ bool Game_Player::CheckActionEvent() {
 				&& ev.GetY() == front_y
 				&& ev.GetLayer() == lcf::rpg::EventPage::Layers_same
                 && ev.GetTrigger() == lcf::rpg::EventPage::Trigger_action
-                && c2CircletoCircle(self, other)
+//                && c2CircletoCircle(self, other)
                 || ev.IsMoving()
 //              || ev.GetDirection() ==  self_dir
 //              || ev.GetDirection() !=  self_dir
@@ -904,7 +905,14 @@ bool Game_Player::GetOffVehicle() {
 	data()->unboarding = true;
 
 	SetThrough(true);
-	Move(GetDirection());
+//	Move(GetDirection());
+
+
+    c2v vector = c2V(GetDxFromDirection(GetDirection()), GetDyFromDirection(GetDirection()));
+    float step_size = 384   / 256.0;
+    MoveVector(c2Mulvs(vector, step_size));
+
+
 	ResetThrough();
 
 	data()->vehicle = 0;
