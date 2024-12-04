@@ -11,8 +11,6 @@
 #include <input.h>
 #include "game_map.h"
 #include "game_player.h"
-#include "sprite_character.h"
-#include "game_character.h"
 #include <cache.h>
 #include "game_event.h"
 #include "scene_map.h"
@@ -50,26 +48,22 @@ float Spriteset_MapDoom::castRay(float rayAngle, int& ray, std::vector<DrawingDo
 
 		if ((int)rayPosX % TILE_SIZE == 8 && (int)rayPosY % TILE_SIZE == 8)
 		{
-			auto event = Game_Map::GetEventAt(mapX, mapY, true);
-			if (event) {
+			int t_id = tilemapUp->GetTileDoom(mapX, mapY, 1);
+			if (t_id > 146) {
+				DrawingDoom de = { 6, x, rayDistance + 8.0f, (int)rayPosX % TILE_SIZE, t_id, {mapX, mapY} };
 
-				if (event->GetName() != "[WALL]" && event->GetName() != "[WALL_D]" && event->GetName() != "[WALL_S]") {
-					float distance = rayDistance;
-
-					DrawingDoom de = { 1, x, distance - 0.1f, (int)rayPosX % TILE_SIZE, event->GetId() };
-
-					auto b = std::find_if(d.begin(),
-						d.end(),
-						[&d1 = de]
-						(const DrawingDoom& d2) -> bool { return d2.type == 1 && d1.evID == d2.evID; });
+				auto b = std::find_if(d.begin(),
+					d.end(),
+					[&d1 = de]
+					(const DrawingDoom& d2) -> bool { return d2.type == 6 && (d1.position.x == d2.position.x && d1.position.y == d2.position.y); });
 
 
-					if (b == d.end()) {
-						d.push_back(de);
-					}
+				if (b == d.end()) {
+					d.push_back(de);
 				}
 
 			}
+
 		}
 
 		if ((int)rayPosX % TILE_SIZE == 0 || (int)rayPosY % TILE_SIZE == 0
@@ -148,8 +142,6 @@ float Spriteset_MapDoom::castRay(float rayAngle, int& ray, std::vector<DrawingDo
 		ray = (int)rayPosY % TILE_SIZE;
 
 	float distance = rayDistance;
-	/*if (Main_Data::game_player->doomMoveType == 0)
-		distance *= cos(rayAngle - player.angle);*/
 	return distance;  // Retourner la distance si un mur est touché
 }
 
@@ -165,26 +157,19 @@ float Spriteset_MapDoom::renderTexturedFloor(float x1, float wallHeight, float r
 	int lastMapX = -1;
 	int lastMapY = -1;
 
-	if (Input::IsTriggered(Input::DEBUG_THROUGH)) {
-		Output::Debug("---");
-	}
 	int y = 0;
 	float distance = 0;
 	float tilex, tiley;
 	int mapX;
 	int mapY;
 	BitmapRef texture;
-//	BitmapRef texture1;
-//  BitmapRef texture2;
 
 	const int inf = std::numeric_limits<int>::max();
 
 	//for (int y = start; y < Player::screen_height; y++) {
 	for (y = Player::screen_height; y >= start ; y--) {
 		// Créer et calculer la distance
-//      distance = (Player::screen_height) / (2.0f * y - Player::screen_height);
 		distance = (Player::screen_height) / (2.0f * y - Player::screen_height);
-
 		if (distance < 0) {
 			distance = abs(distance);
 			//Output::Debug("NEG");
@@ -218,15 +203,12 @@ float Spriteset_MapDoom::renderTexturedFloor(float x1, float wallHeight, float r
 
 			if (lastMapX != mapX || lastMapY != mapY) {
 				texture = mapTexture(mapX, mapY);
-//				texture1 = mapTexture1(mapX, mapY);
 				lastTile = texture;
-//				lastTile1 = texture1;
 				lastMapX = mapX;
 				lastMapY = mapY;
 			}
 			else {
 				texture = lastTile;
-//				texture1 = lastTile1;
 			}
 
 			int texture_x = static_cast<int>(std::floor(tilex * TILE_SIZE)) % TILE_SIZE;
@@ -236,50 +218,11 @@ float Spriteset_MapDoom::renderTexturedFloor(float x1, float wallHeight, float r
 
 			if (texture) {
 				Rect srcRect = { texture_x, texture_y, 1, 1 };
-				//if (distance > 8) {
-				//	y--;
-				//	srcRect.width++;
-				//	srcRect.height++;
-				//}
+
 				sprite->BlitFast(x1, y, *texture, srcRect, 255);
 
-				if (distance > 5) {
-					// y -= 32;
-					// srcRect = { (texture_x+1)%16, texture_y, 1, 1 };
-					// sprite->BlitFast(x1 + 1, y, *texture, srcRect, 255);
-				}
 			}
 
- //           if (texture1) {
-//				Rect srcRect = { texture_x, texture_y, 1, 1 };
-				//if (distance > 8) {
-				//	y--;
-				//	srcRect.width++;
-				//	srcRect.height++;
-				//}
-//				sprite->BlitFast(x1, y, *texture1, srcRect, 255);
-
-//				if (distance > 5) {
-					// y -= 32;
-					// srcRect = { (texture_x+1)%16, texture_y, 1, 1 };
-					// sprite->BlitFast(x1 + 1, y, *texture, srcRect, 255);
-//				}
-//			}
-			//if (distance > 3) {
-			//	//y -= 96;
-			//	y--;
-			//	if (Input::IsTriggered(Input::DEBUG_THROUGH)) {
-			//		Output::Debug(" .");
-			//	}
-			//	//Output::Debug("QSd {}", distance);
-			//	//break;
-			//	if (distance > 4) {
-			//		y--;
-			//		if (Input::IsTriggered(Input::DEBUG_THROUGH)) {
-			//			Output::Debug(" ..");
-			//		}
-			//	}
-			//}
 		}
 		else {
 			break;
@@ -287,13 +230,63 @@ float Spriteset_MapDoom::renderTexturedFloor(float x1, float wallHeight, float r
 
 	}
 
-	if (Input::IsTriggered(Input::DEBUG_THROUGH)) {
-		Output::Debug(" {} {}", y, distance);
-	}
-
 	return distance;
 }
 
+void Spriteset_MapDoom::DrawEvents(std::vector<DrawingDoom> &d, float FOV) {
+	for (auto& ev : Game_Map::GetEvents()) {
+		bool not_event_wall = true;
+		if (ev.GetName() == "[WALL]" || ev.GetName() == "[WALL_D]" || ev.GetName() == "[WALL_S]")
+			not_event_wall = false;
+
+		if (ev.IsActive() && not_event_wall) {
+
+			float evX = ev.GetSpriteX() / 256.0 + 0.5;
+			float evY = ev.GetSpriteY() / 256.0 + 0.5;
+			float playerX = player.x / 16;
+			float playerY = player.y / 16;
+
+			// Output::Debug("P {} {} {}", playerX, playerY, ev.GetSpriteX() / 16);
+
+			float spriteXRelative = evX - playerX;
+			float spriteYRelative = evY - playerY;
+
+			float spriteAngleRadians = std::atan2(spriteYRelative, spriteXRelative);
+			float ang = player.angle - FOV / 2;
+			int spriteAngle = (spriteAngleRadians - ang) * 180 / M_PI;
+
+			//Output::Debug(" {} {} {} {}", spriteAngle, spriteAngleRadians, ang, player.angle * 180 / M_PI);
+
+			// Sprite angle checking
+			if (spriteAngle > 360) spriteAngle -= 360;
+			if (spriteAngle < 0) spriteAngle += 360;
+
+			int screen_width = Player::screen_width / scale;
+
+			int spriteX = std::floor(spriteAngle * screen_width / (FOV * 180 / M_PI));
+
+			float distance = std::sqrt(std::pow(playerX - evX, 2) + std::pow(playerY - evY, 2)) * 16;
+
+			//if (spriteX < 0 || screen_width) {
+			//	Output::Debug("SKIP");
+			//	continue; // Ne dessine pas les sprites hors écran
+			//}
+
+			// SpriteX right position fix
+			if (spriteX > screen_width) {
+				spriteX %= screen_width;
+				spriteX -= screen_width;
+			}
+			DrawingDoom de = { 1, spriteX, distance, 0, ev.GetId() };
+
+			// Output::Debug("B {} {} {} {}", spriteX, spriteAngle, distance, ev.GetId());
+
+			d.push_back(de);
+
+
+		}
+	}
+}
 // Fonction pour dessiner la scène en utilisant les fonctions de Spriteset_MapDoom
 void Spriteset_MapDoom::renderScene() {
 
@@ -334,9 +327,14 @@ void Spriteset_MapDoom::renderScene() {
 			DrawingDoom d = { 0, x, distance, ray, 0, {mx, my} };
 			drawings.push_back(d);
 
+			/*if (x == Player::screen_width / 2)
+				Output::Debug("D {}", distance);*/
+
 		}
 
 	}
+
+	DrawEvents(drawings, FOV);
 
 	std::sort(drawings.begin(), drawings.end(), std::greater<DrawingDoom>());
 
@@ -349,52 +347,7 @@ void Spriteset_MapDoom::renderScene() {
 
 			if (distance > 0) {
 
-				// Test 1
-				//
-				//
-				// Calcul de la distance en fonction de la hauteur à laquelle le sol doit être projeté
-				//float y = d.position.y * TILE_SIZE;
-				//	float rowDistance = Player::screen_height / (2.0f * (Player::screen_height - y));  // y est la hauteur actuelle dans l'image
 
-				//	float directionX = cos(player.angle);  // direction X basée sur l'angle
-				//	float directionY = sin(player.angle);  // direction Y basée sur l'angle
-
-				//	float posX = player.x;
-				//	float posY = player.y;
-
-				//	// Coordonnées du monde réel pour la position x, y
-				//	float floorX = posX + rowDistance * (directionX - posX);
-				//	float floorY = posY + rowDistance * (directionY - posY);
-
-				//	// Charger la texture du sol à la position calculée
-				//	int textureWidth = TILE_SIZE;
-				//	int textureHeight = TILE_SIZE;
-				//	int textureX = static_cast<int>(floorX * textureWidth) % textureWidth;
-				//	int textureY = static_cast<int>(floorY * textureHeight) % textureHeight;
-
-				//	Rect r = Rect(d.x, y, 1, 1); // 1 pixel à la fois
-				//	BitmapRef texture = bitmap;// floorTexture(floorX, floorY);
-
-				//	if (texture) {
-				//		Rect srcRect = { textureX, textureY, 1, 1 };
-				//		sprite->StretchBlit(r, *texture, srcRect, 255);  // Afficher un pixel du sol
-				//	}
-
-				// Test 2
-
-				//int lineHeight = static_cast<int>(TILE_SIZE * Player::screen_height / distance);
-				//int drawStart = (Player::screen_height - lineHeight) / 2;
-				//int drawEnd = drawStart + lineHeight;
-
-				//int textureX = d.textureX;
-
-				//Rect r = Rect(d.x, drawStart, 1, drawEnd - drawStart);
-				//BitmapRef texture = mapTexture(d.position.x, d.position.y);
-
-				//if (texture) {
-				//	Rect srcRect = { textureX, 0, 1, texture->height() };
-				//	sprite->StretchBlit(r, *texture, srcRect, 255);
-				//}
 
 			}
 		}
@@ -414,15 +367,12 @@ void Spriteset_MapDoom::renderScene() {
 				int textureX = d.textureX;
 
 				Rect r = Rect(d.x, drawStart, 1, drawEnd - drawStart);
-  		        BitmapRef texture;
-//      		BitmapRef texture1;
-//      		BitmapRef texture2;
-
+				BitmapRef texture;
 				if (d.type == 3 || d.type == 5) {
 					texture = ((Scene_Map*)scene_map)->GetEventSprite(d.evID);
 				}
 				else
-					texture  = mapTexture(d.position.x, d.position.y);
+					texture = mapTexture(d.position.x, d.position.y);
 
 				if (texture) {
 					Rect srcRect;
@@ -467,66 +417,68 @@ void Spriteset_MapDoom::renderScene() {
 
 			}
 		}
-		else if (d.type == 1 || d.type == 4) {
+		else if (d.type == 1 || d.type == 4 || d.type == 6) {
 			float distance = d.distance;
 
-			// Output::Debug(" {} {}", d.evID, d.distance);
+			//Output::Debug("AA {} {}", d.evID, d.distance);
 
 			if (distance > 0) {
 
-                BitmapRef texture = bitmap;
-//              BitmapRef texture1 = bitmap;
-//      		BitmapRef texture2 = bitmap;
-
-
-
-				texture = ((Scene_Map*)scene_map)->GetEventSprite(d.evID);
-
-					int DoomEventWidth = texture->width();
-                    int DoomEventHeight =  texture->height();
-
+				BitmapRef texture;
+				if (d.type == 6)
+					texture = mapTexture(d.position.x, d.position.y, 1);
+				else
+					texture = ((Scene_Map*)scene_map)->GetEventSprite(d.evID);
 
 				if (texture) {
 
 					int lineHeight = static_cast<int>(TILE_SIZE * Player::screen_height / distance);
-//      			int drawStart = (Player::screen_height - lineHeight) / 2;
 					int drawStart = (Player::screen_height - lineHeight) / 2;
-					int textureX = d.textureX;
+					int drawEnd = drawStart + lineHeight;
+					// int textureX = d.textureX;
 
 					float d5 = (float) lineHeight / Player::screen_height;
 					int zx = d5 * 6 * texture->width();
 					int zy = d5 * 6 * texture->height();
 
-					//Output::Debug(" {} {} {} {} {}", z, textureX, d5, Player::screen_height/lineHeight, zf);
+					int DoomEventWidth = texture->width();
+					int DoomEventHeight = texture->height();
 
 					Rect srcRect = { 0, 0, texture->width(), texture->height()};
-					Rect srcRect2 = { -32, 0, (texture->width() * 2   ), (texture->height() *   2 )};
+					Rect srcRect2 = { 0, 0, texture->width(), texture->height() };
 
-
-					float sprCorrection =  4;
-					if (Game_Map::GetEvent(d.evID)->HasTileSprite()){
-						sprCorrection = 1.2f;}
-                    else
+					float sprCorrection = 1;
+					if (d.type == 6)
+						sprCorrection = 2.0f;
+					else
+						if (Game_Map::GetEvent(d.evID)->HasTileSprite())
+							sprCorrection = 2.0f;
+                        else
               		if (!Game_Map::GetEvent(d.evID)->HasTileSprite()){
                        if (DoomEventWidth   >   80){
                        if (DoomEventHeight  <   80) {
-                        sprCorrection = -12.4f;
+                        sprCorrection = 2.4f;
                        }
                         else
-                        sprCorrection =  32.4f;
+                        sprCorrection =  2.4f;
                         }
                         else
                         if (DoomEventWidth > 24 && DoomEventWidth < 80);   {
-                        sprCorrection =  12.4f;
+                        sprCorrection =  1.4f;
                         }
                         if (DoomEventWidth <= 24) {
-                        sprCorrection = 2.6f;}}
-// 					Rect r = Rect(d.x - zx / 2, drawStart + zy / sprCorrection, zx, zy);
-					Rect r = Rect(d.x - zx / 2, drawStart + zy / sprCorrection, zx, zy);
-                    if (DoomEventWidth > 64){
-					sprite->StretchBlit(r, *texture, srcRect2 , 255);}
-					else
-					sprite->StretchBlit(r, *texture, srcRect, 255);
+                        sprCorrection = 1.1f;}}
+
+					Rect r = Rect(d.x - zx / 2, drawEnd - zy / sprCorrection, zx, zy);
+					if (DoomEventWidth > 64) {
+						sprite->StretchBlit(r, *texture, srcRect2, 255);
+					}
+					else {
+						sprite->StretchBlit(r, *texture, srcRect, 255);
+					}
+
+
+					// Output::Debug("E {} {}", r.x, r.y);
 				}
 			}
 		}
@@ -580,11 +532,7 @@ float Spriteset_MapDoom::castRay7() {
 		distance = distance * cos(rayAngle - player.angle);
 
 		// Wall height
-		int wallTerrain = Game_Map::GetTerrainTag(mapX, mapY);
-		int wallHeight = floor((Player::screen_height /  8) / distance);
-
-
-//      int wallHeight = floor((Player::screen_height / 2) / distance);
+		int wallHeight = floor((Player::screen_height / 2) / distance);
 
 		// Get texture
 		//let texture = data.textures[wall - 1];
@@ -626,10 +574,7 @@ void Spriteset_MapDoom::renderMode7() {
 	int mapX = 0;
 	int mapY = 0;
 
-	int startTerrain = Game_Map::GetTerrainTag(mapX, mapY);
-	int startY = Player::screen_height / startTerrain;
-
-//  int startY = Player::screen_height / 8;
+	int startY = Player::screen_height / 8;
 
 	for (int y = startY; y < Player::screen_height; ++y) {
 
@@ -697,17 +642,11 @@ void Spriteset_MapDoom::renderMode7() {
 				}
 
 				BitmapRef texture = mapTexture(mapX, mapY);
-//				BitmapRef texture1 = mapTexture1(mapX, mapY);
 
 				if (texture) {
 					Rect srcRect = {TILE_SIZE - 1 - mx, my, 1, 1 };
 					sprite->BlitFast(x, y, *texture, srcRect, 200);
 				}
-
-//				if (texture1) {
-//					Rect srcRect = {TILE_SIZE - 1 - mx, my, 1, 1 };
-//					sprite->BlitFast(x, y, *texture1, srcRect, 200);
-//				}
 
 
 				/*//// Paramètres pour la position du personnage (en coordonnées de tuile)
@@ -809,7 +748,7 @@ void Spriteset_MapDoom::renderMode7() {
 
 			if (distance > 0) {
 
-				BitmapRef texture = bitmap;
+				BitmapRef texture;
 				texture = ((Scene_Map*)scene_map)->GetEventSprite(d.evID);
 
 				if (texture) {
@@ -835,51 +774,47 @@ void Spriteset_MapDoom::renderMode7() {
 	drawings.clear();
 
 	/*//// Ajout du dessin du personnage avec zoom proportionnel
-	////// Récupérer la position du personnage en coordonnées de tile */
-//      float playerTileX = Main_Data::game_player->GetX();
-//      float playerTileY = Main_Data::game_player->GetY();
+	////// Récupérer la position du personnage en coordonnées de tile
+	////float playerTileX = Main_Data::game_player->GetX();
+	////float playerTileY = Main_Data::game_player->GetY();
 
-	// Calculer les coordonnées de dessin du personnage sur l'écran
-//      float playerScreenX = (playerTileX - moveX) / TILE_SIZE;
-//      float playerScreenY = (playerTileY - moveY / TILE_SIZE);
+	////// Calculer les coordonnées de dessin du personnage sur l'écran
+	////float playerScreenX = (playerTileX - moveX) / TILE_SIZE;
+	////float playerScreenY = (playerTileY - moveY / TILE_SIZE);
 
-	// Ajuster la taille du sprite du personnage en fonction de sa profondeur (zoom proportionnel à sa distance)
-//      float playerDepth = z; // La profondeur actuelle (z) détermine le zoom
-//      float zoomFactor = 1.0f / (playerDepth * 0.05f); // Ajuster ce facteur selon les besoins
+	////// Ajuster la taille du sprite du personnage en fonction de sa profondeur (zoom proportionnel à sa distance)
+	////float playerDepth = z; // La profondeur actuelle (z) détermine le zoom
+	////float zoomFactor = 1.0f / (playerDepth * 0.05f); // Ajuster ce facteur selon les besoins
 
-	// Définir les dimensions du sprite du personnage
-//      int playerSpriteWidth = (int)(24 * zoomFactor);
-//      int playerSpriteHeight = (int)(32 * zoomFactor);
+	////// Définir les dimensions du sprite du personnage
+	////int playerSpriteWidth = (int)(24 * zoomFactor);
+	////int playerSpriteHeight = (int)(32 * zoomFactor);
 
 	////// Centrer le sprite sur sa position à l'écran
-//      int playerDrawX = (int)(Player::screen_width / 2 + playerScreenX - playerSpriteWidth / 2);
-//      int playerDrawY = (int)(Player::screen_height / 2 + playerScreenY - playerSpriteHeight / 2);
+	////int playerDrawX = (int)(Player::screen_width / 2 + playerScreenX - playerSpriteWidth / 2);
+	////int playerDrawY = (int)(Player::screen_height / 2 + playerScreenY - playerSpriteHeight / 2);
 
-//      Output::Debug(" {} {} {} {}", playerDrawX, playerDrawY, playerSpriteWidth, playerSpriteHeight);
+	////Output::Debug(" {} {} {} {}", playerDrawX, playerDrawY, playerSpriteWidth, playerSpriteHeight);
 
 	////// Dessiner le personnage à l'écran avec un zoom proportionnel
-//      BitmapRef playerTexture = ((Scene_Map*) scene_map)->GetEventSprite(0);
-//      if (playerTexture) {
-//          Rect playerSrcRect = { 0, 0, 24, 32 };
-//          Rect playerDestRect = { playerDrawX, playerDrawY, playerSpriteWidth, playerSpriteHeight };
+	////BitmapRef playerTexture = scene->GetEventSprite(0);
+	////if (playerTexture) {
+	////	Rect playerSrcRect = { 0, 0, 24, 32 };
+	////	Rect playerDestRect = { playerDrawX, playerDrawY, playerSpriteWidth, playerSpriteHeight };
 
 	////	// Dessiner le sprite du personnage avec zoom
-//  	sprite->StretchBlit(playerDestRect, *playerTexture, playerSrcRect, 255);
-//      }
+	////	sprite->StretchBlit(playerDestRect, *playerTexture, playerSrcRect, 255);
+	////}*/
 
 
-	BitmapRef texture = bitmap;
+	BitmapRef texture;
 	texture = ((Scene_Map*) scene_map)->GetEventSprite(0);
-
-    	int DoomEventWidth = texture->width();
-		int DoomEventHeight =  texture->height();
 
 	if (texture) {
 		Rect srcRect = { 0, 0, texture->width(), texture->height() };
 		//Rect r = Rect(Game_Map::GetEvent(d.evID)->GetX() * TILE_SIZE - zx / 2, drawStart + zy / 4, zx, zy);
-		int sprCorrection =    4;
-//      Rect r = Rect(205 - 4, 144 + 20, 24,32);
-		Rect r = Rect(205 - 4, 0, DoomEventWidth,    DoomEventHeight);
+		int sprCorrection = 4;
+		Rect r = Rect(205 - 4, 144 + 20, 24,32);
 		sprite->StretchBlit(r, *texture, srcRect, 255);
 	}
 
@@ -887,30 +822,30 @@ void Spriteset_MapDoom::renderMode7() {
 	castRay7();
 }
 
-
-
-
-BitmapRef Spriteset_MapDoom::mapTexture(int x, int y) {
+BitmapRef Spriteset_MapDoom::mapTexture(int x, int y, int layer) {
 	if (x >= 0 && y >= 0 && x < mapWidth() && y < mapHeight()) {
 		//int id = ((Scene_Map*)scene_map)->GetTileID(x, y, 0);
-		int id = tilemapDown->GetTileDoom(x, y, 0);
+		int id = 0;
+		if (layer == 0)
+			id = tilemapDown->GetTileDoom(x, y, 0);
+		else
+			id = tilemapUp->GetTileDoom(x, y, 1);
 
-// This finds the upper layer tile...?
-
-//          int id1 = tilemapUp->GetTileDoom(x, y, 0);
-
-		if (!mapTexturesID[id]) {
-			mapTexturesID[id] = ((Scene_Map*)scene_map)->GetTile(x, y, 0);
-			return mapTexturesID[id];
+		auto mt = mapTexturesID;
+		if (layer != 0) {
+			mt = mapTexturesUpperID;
 		}
-			return mapTexturesID[id];
+
+		if (!mt[id]) {
+			mt[id] = ((Scene_Map*)scene_map)->GetTile(x, y, layer);
+			return mt[id];
+		}
+		return mt[id];
 	}
 
 	BitmapRef b = Bitmap::Create(TILE_SIZE, TILE_SIZE, Color(0, 0, 0, 0));
 	return b;
 }
-
-
 
 void Spriteset_MapDoom::renderTexturedFloor() {
 
@@ -956,7 +891,6 @@ void Spriteset_MapDoom::renderTexturedFloor() {
 
 			Rect r = Rect(x, y, 1, 1);
 			BitmapRef texture = mapTexture(x2, y2);
-//			BitmapRef texture1 = mapTexture1(x2, y2);
 			int mx = floor(x2);
 			int my = floor(y2);
 
@@ -965,11 +899,6 @@ void Spriteset_MapDoom::renderTexturedFloor() {
 				//sprite->StretchBlit(r, *texture, srcRect, 255);
 				sprite->BlitFast(x, y, *texture, srcRect, 255);
 			}
-//			if (texture1) {
-//				Rect srcRect = { mx, my, 1, 1 };
-				//sprite->StretchBlit(r, *texture, srcRect, 255);
-//				sprite->BlitFast(x, y, *texture1, srcRect, 255);
-//			}
 
 		}
 		z++;
@@ -985,7 +914,6 @@ Spriteset_MapDoom::Spriteset_MapDoom() {
 	chipset = ((Scene_Map*)scene_map)->GetChipset();
 
 	tilemapDown = ((Scene_Map*)scene_map)->GetTilemap(0);
-
 	tilemapUp = ((Scene_Map*)scene_map)->GetTilemap(1);
 
 	doomMap = true;
@@ -1012,20 +940,6 @@ Spriteset_MapDoom::Spriteset_MapDoom() {
 
 	sprite = Bitmap::Create(Player::screen_width, Player::screen_height);
 	spriteUpper = Bitmap::Create(Player::screen_width, Player::screen_height);
-// 	spriteUpper2 = Bitmap::Create(Player::screen_width, Player::screen_height);
-//  spriteSprite = Bitmap::Create(Player::screen_width, Player::screen_height);
-
-	FileRequestAsync* request = AsyncHandler::RequestFile("Pictures", "floor");
-	request->SetGraphicFile(true);
-	request_id = request->Bind(&Spriteset_MapDoom::OnTitleSpriteReady, this, 0);
-	request->Start();
-
-
-	request = AsyncHandler::RequestFile("Pictures", "wall");
-	request->SetGraphicFile(true);
-	request_id = request->Bind(&Spriteset_MapDoom::OnTitleSpriteReady, this, 1);
-	request->Start();
-
 
 	for (int i = 0;i <= Game_Map::GetHighestEventId();i++) {
 		auto e = Game_Map::GetEvent(i);
@@ -1046,20 +960,6 @@ Spriteset_MapDoom::Spriteset_MapDoom() {
 			}
 		}
 	}
-}
-
-// This might be important. To find later, search word is Kwijibo
-
-
-void Spriteset_MapDoom::OnTitleSpriteReady(FileRequestResult* result, int i) {
-	BitmapRef bitmapRef = Cache::Picture(result->file, false);
-
-	if (i == 0)
-		bitmap = bitmapRef;
-	else
-		bitmap2 = bitmapRef;
-
-	Update(true);
 }
 
 Spriteset_MapDoom::Spriteset_MapDoom(std::string n, int zoom, int dx, int dy, int rx, int ry, int rz) {
@@ -1094,8 +994,6 @@ Spriteset_MapDoom::Spriteset_MapDoom(std::string n, int zoom, int dx, int dy, in
 
 	sprite = Bitmap::Create(Player::screen_width, Player::screen_height);
 	spriteUpper = Bitmap::Create(Player::screen_width, Player::screen_height);
-//	spriteUpper2 = Bitmap::Create(Player::screen_width, Player::screen_height);
-//  spriteSprite = Bitmap::Create(Player::screen_width, Player::screen_height);
 
 	Update(true);
 
@@ -1423,6 +1321,12 @@ void Spriteset_MapDoom::Update(bool first) {
 
 
 		if (Main_Data::game_player->doomMoveType == 0) {// Tile Movement
+			if (Input::IsPressed(Input::MINUS)) {
+				scale -= 0.1f;
+			}
+			if (Input::IsPressed(Input::MULTIPLY)) {
+				scale += 0.1f;
+			}
 
 			if (Main_Data::game_player->doomWait != 0) {
 
@@ -1466,10 +1370,7 @@ void Spriteset_MapDoom::Update(bool first) {
 			}
 
 		} else { // Pixel Movement
-			if (
-			(Main_Data::game_player->canMove) || (Main_Data::game_player->IsJumping()))
-
-                {
+			if (Main_Data::game_player->canMove) {
 				if (Input::IsPressed(Input::UP)) {  // Avancer
 					float px = player.x + cos(player.angle) * s * TILE_SIZE;
 					float py = player.y + sin(player.angle) * s * TILE_SIZE;
@@ -1517,6 +1418,7 @@ void Spriteset_MapDoom::Update(bool first) {
 						Output::Debug("XY {} {}", front_x, front_y);
 
 						bool action = Main_Data::game_player->CheckEventTriggerThere({ lcf::rpg::EventPage::Trigger_touched, lcf::rpg::EventPage::Trigger_collision }, front_x, front_y, false);
+                        bool action2 = Main_Data::game_player->CheckEventTriggerHere({ lcf::rpg::EventPage::Trigger_touched, lcf::rpg::EventPage::Trigger_collision }, false);
 
 						Output::Debug("Action {}", action);
 
@@ -1837,8 +1739,6 @@ void Spriteset_MapDoom::Show() {
 
 	sprite->Clear();
 	spriteUpper->Clear();
-//	spriteUpper2->Clear();
-//  spriteSprite->Clear();
 
 	float zmin = 0;
 	float zmax = 0;
@@ -1860,7 +1760,6 @@ void Spriteset_MapDoom::Show() {
 	bool pointsZB[999][999] = { false };
 
 	Rect r;
-	Rect r2;
 	Color c = Color(255,0,0,255);
 	for (auto p : points) {
 
@@ -1875,7 +1774,6 @@ void Spriteset_MapDoom::Show() {
 			pointsZB[i][j] = true;
 
 			r = Rect(p.x + displayX + Player::screen_width / 2, Player::screen_height - (p.y + displayY + Player::screen_height / 2), 1, 1);
-
 
 			int mult = ((p.z - zmin) / (zmax - zmin)) * 100;
 
@@ -1893,8 +1791,6 @@ void Spriteset_MapDoom::Show() {
 			if (p.upper) {
 				c = Color(255, 0, 0, 255);
 				spriteUpper->FillRect(r, c);
-//				spriteUpper2->FillRect(r, c);
-//      		spriteSprite->FillRect(r2, c);
 			}
 		}
 	}

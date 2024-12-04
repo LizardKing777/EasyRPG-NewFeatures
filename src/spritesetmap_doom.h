@@ -8,9 +8,7 @@
 #include "async_handler.h"
 #include "sprite.h"
 #include "scene.h"
-#include "sprite_character.h"
 
-class Game_Character;
 class Spriteset_MapDoom {
 public:
 
@@ -24,18 +22,18 @@ public:
 		float x, y;   // Position du joueur
 		float angle;  // Angle de vue (orientation du joueur)
 		float fov;    // Champ de vision du joueur (Field of View)
-		float FOVangle = 110;
+		float FOVangle;
 	};
-	PlayerDoom player = { 10 / 2.0 * TILE_SIZE, 8 / 2.0 * TILE_SIZE, 0, 110.0f * (M_PI / 180.0f) };
+	PlayerDoom player = { 10 / 2.0 * TILE_SIZE, 8 / 2.0 * TILE_SIZE, 0, 110 * (M_PI / 180.0f), 110 };
 
-	PlayerDoom player7 = { 10 / 2.0 * TILE_SIZE, 8 / 2.0 * TILE_SIZE, 0, 110.0f * (M_PI / 180.0f) };
+	PlayerDoom player7 = { 10 / 2.0 * TILE_SIZE, 8 / 2.0 * TILE_SIZE, 0, 110.0f * (M_PI / 180.0f), 110 };
 
-	//
+	// 
 	struct DrawingDoom {
 		int type; // 0 => Wall, 1 => Event
 		int x;
-		float distance;
-		int textureX;
+		float distance; 
+		int textureX; 
 		int evID;
 		Point position;
 
@@ -75,10 +73,11 @@ public:
 
 	float renderTexturedFloor(float x, float distance, float angle);
 	void renderTexturedFloor();
-	BitmapRef mapTexture(int x, int y);
-	void OnTitleSpriteReady(FileRequestResult* result, int i);
-	BitmapRef bitmap;
-	BitmapRef bitmap2;
+	BitmapRef mapTexture(int x, int y, int layer = 0);
+
+	void DrawEvents(std::vector<DrawingDoom> &d, float FOV);
+
+	float scale = 1;
 
 	BitmapRef chipset;
 	FileRequestBinding request_id;
@@ -107,10 +106,7 @@ public:
 
 	BitmapRef sprite;
 	BitmapRef spriteUpper;
- //   BitmapRef spriteUpper2;
-//	BitmapRef spriteSprite;
 	BitmapRef lastTile;
-//	BitmapRef lastTile1;
 
 	void pixel(float x, float y, float z, Color c);
 	void line(Point p1, Point p2);
@@ -150,11 +146,12 @@ public:
 	//std::unique_ptr<Scene_Map> scene_map;
 	//BitmapRef mapTextures[9999][999];
 	BitmapRef mapTexturesID[9999];
+	BitmapRef mapTexturesUpperID[9999];
 
 	float scaleX = 96;
 	float scaleY = scaleX;
 
 protected:
-    	std::vector<std::unique_ptr<Sprite_Character>> character_sprites;
+
 };
 #endif
