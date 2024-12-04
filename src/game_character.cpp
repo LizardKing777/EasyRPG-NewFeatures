@@ -589,31 +589,34 @@ bool Game_Character::MoveVector(c2v vector) {
 }
 
 bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
-	if (abs(vx) <= Epsilon && abs(vy) <= Epsilon) {
-		return false;
-	}
+//	if (abs(vx) <= Epsilon && abs(vy) <= Epsilon) {
+//		return false;
+//	}
 
-    if (IsJumping())
-    {
-        return false;
-    }
+    auto& player = Main_Data::game_player;
+    auto player_x = player->GetX();
+    auto player_y = player->GetY();
 
 
     bool vehicle = Main_Data::game_player->InVehicle();
     bool airship = Main_Data::game_player->InAirship();
     bool flying = Main_Data::game_player->IsFlying();
     bool boarding = Main_Data::game_player->IsBoardingOrUnboarding();
+    bool isAboard = Main_Data::game_player->IsAboard();
+    bool ascending = Game_Map::GetVehicle(Game_Vehicle::Airship)->IsAscending();
+    bool descending = Game_Map::GetVehicle(Game_Vehicle::Airship)->IsDescending();
+    bool airshipUse = Game_Map::GetVehicle(Game_Vehicle::Airship)->IsInUse();
 
-    if (boarding)
+	auto boatFront = Game_Map::GetVehicle(Game_Vehicle::Boat)->GetDirection();
+	auto playerFront = Main_Data::game_player->GetDirection();
+    auto airshipFront    = Game_Map::GetVehicle(Game_Vehicle::Airship)->GetDirection();
+
+    auto MapID = Main_Data::game_player->GetMapId();
+
+    if (boarding || ascending || IsJumping() || descending)           // this is to try and stop events from going to NaNland.
     {
         return false;
     }
-
-    if (flying)
-    {
-
-    }
-
 	UpdateFacing();
 	SetRemainingStep(1); //little hack to make the character step anim
 	float last_x = real_x;
@@ -625,10 +628,12 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 	}
 	c2Circle self;
 	c2Circle other;
+	c2Circle hero;
 	self.p = c2V(real_x + 0.5, real_y + 0.5);
 	self.r = 0.5;
-	other.r = 0.5;
+   	other.r = 0.5;
 	c2AABB tile;
+
 	c2Manifold manifold;
 
 	/*
@@ -682,8 +687,8 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 		}
 	}
 	//Test Collision With Player
-	auto& player = Main_Data::game_player;
-	if (Game_Map::WouldCollideWithCharacter(*this, *player, false)) {
+
+	if ((Game_Map::WouldCollideWithCharacter(*this, *player, false)) ) {
 		other.p.x = player->real_x + 0.5;
 		other.p.y = player->real_y + 0.5;
 		c2CircletoCircleManifold(self, other, &manifold);
@@ -694,98 +699,130 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 	}
 	//Test Collision With Map - Map collision has high priority, so it is tested last
 
-
-    int player_x = player->GetX();
-    int player_y = player->GetY();
-	const auto front_x = Game_Map::XwithDirection(GetX(), GetDirection());
-	const auto front_y = Game_Map::YwithDirection(GetY(), GetDirection());
-
 	int map_width = Game_Map::GetTilesX();
 	int map_height = Game_Map::GetTilesY();
-
-
 
 	int left = floor((self.p.x - 0.5));
 	int right = floor((self.p.x - 0.5) + 1);
 	int top = floor((self.p.y - 0.5));
 	int bottom = floor((self.p.y - 0.5) + 1);
 
-
-
             for     (int x = 0; x <= (right - left + 1); x++)   {
-
             for (int y = 0; y <= (bottom - top + 1); y++) {
 			int tile_x = left + x;
 			int tile_y = top + y;
 
+   if (Game_Map::LoopHorizontal()) {
 			if ((tile_x < 0)  || (tile_x >= map_width)  )
             {
-                tile_x = (tile_x % map_width + map_width) % map_width;
+            tile_x = (tile_x % map_width + map_width) % map_width;
             }
-
-            if ((tile_y < 0) || (tile_y >= map_height) )
-            {
-                tile_y = (tile_y % map_height + map_height) % map_height;
-            }
-
-
-            if (!Game_Map::IsPassableTile(&(*this), 0x08, front_x, front_y)) {
-
-            }
-
-
-			if (!Game_Map::IsPassableTile(&(*this), 0x08, tile_x, tile_y)) {
-				tile.min = c2V(tile_x, tile_y);
-				tile.max = c2V(tile_x + 1, tile_y + 1);
-
             if ((self.p.x < 0)  )
             {
             self.p.x = self.p.x + map_width;
             }
-
             if ((self.p.x >= map_width)  )
             {
             self.p.x = self.p.x - map_width;
             }
-
+                                    }
+   	if (Game_Map::LoopVertical())   {
+            if ((tile_y < 0) || (tile_y >= map_height) )
+            {
+            tile_y = (tile_y % map_height + map_height) % map_height;
+            }
             if ((self.p.y < 0)  )
             {
             self.p.y = self.p.y + map_width;
             }
-
             if ( (self.p.y >= map_height) )
             {
             self.p.y = self.p.y - map_width;
             }
+                                    }
 
-
-
- //       Output::Warning("vehicle {},  airship  {}", vehicle, airship     );
+            if (!Game_Map::IsPassableTile(&(*this), 0x08, tile_x, tile_y)) {
+				tile.min = c2V(tile_x, tile_y);
+				tile.max = c2V(tile_x + 1, tile_y + 1);
 				c2CircletoAABBManifold(self, tile, &manifold);
-				if (manifold.count > 0) {
+                    if (manifold.count > 0) {
 					self.p.x -= manifold.n.x * manifold.depths[0] * Game_Map::IsPassableTile(&(*this), 0x08, self.p.x, tile_y);
 					self.p.y -= manifold.n.y * manifold.depths[0] * Game_Map::IsPassableTile(&(*this), 0x08, tile_x, self.p.y);
-			     if (Main_Data::game_player)
-    {
-                    int terrain_id = Game_Map::GetTerrainTag(tile_x, tile_y);
-					const lcf::rpg::Terrain* terrain = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_id);
+
+            if (flying)
+            {
+
+    int airshipX = Game_Map::GetVehicle(Game_Vehicle::Airship)->GetX();
+    int airshipY = Game_Map::GetVehicle(Game_Vehicle::Airship)->GetY();
+
+    int GoLeft = airshipX -1;
+    int GoRight = airshipX +1;
+    int GoUp = airshipY -1;
+    int GoDown = airshipY +1;
+
+	int terrain_idLeft = Game_Map::GetTerrainTag(GoLeft,airshipY);
+	const lcf::rpg::Terrain* terrainLeft = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idLeft);
+    bool flypassLeft = terrainLeft->airship_pass;
+
+    int terrain_idRight = Game_Map::GetTerrainTag(GoRight,airshipY);
+	const lcf::rpg::Terrain* terrainRight = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idRight);
+    bool flypassRight = terrainRight->airship_pass;
+
+    int terrain_idUp = Game_Map::GetTerrainTag(airshipX,GoUp);
+	const lcf::rpg::Terrain* terrainUp = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idUp);
+    bool flypassUp = terrainUp->airship_pass;
+
+    int terrain_idDown = Game_Map::GetTerrainTag(airshipX,GoDown);
+	const lcf::rpg::Terrain* terrainDown = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idDown);
+    bool flypassDown = terrainDown->airship_pass;
+
+//                    bool boatpass = terrain->boat_pass;
+//                    bool shippass = terrain->ship_pass;
 
 
-                    bool boatpass = terrain->boat_pass;
-                    bool shippass = terrain->ship_pass;
-                    bool flypass = terrain->airship_pass;
+    if (flypassUp)
+        {
+        if (Input::IsTriggered(Input::UP))
+        {
+        Main_Data::game_player->MoveTo(MapID, airshipX, GoUp);
+        }
+    }
+    else
+    if (flypassRight)
+        {
+        if (Input::IsPressed(Input::RIGHT))
+        {
+        Main_Data::game_player->MoveTo(MapID, GoRight, airshipY);
+        }
+    }
+    else
+    if (flypassDown){
+        if (Input::IsPressed(Input::DOWN))
+        {
+        Main_Data::game_player->MoveTo(MapID, airshipX, GoDown);
+        }
+    }
+    else
+    if (flypassLeft)
+        {
+        if (Input::IsPressed(Input::LEFT))
+        {
+        Main_Data::game_player->MoveTo(MapID, GoLeft, airshipY);
+       }
     }
 
 
-				}
+// We're almost there - I just have to figure out why autotiles are making it go hawyire.
 
+//    Game_Map::GetVehicle(Game_Vehicle::Airship)->MakeWay(airshipX, airshipY, GoX, GoY);
+ //   Main_Data::game_player->MakeWay(airshipX, airshipY, GoX, GoY);
 
-		}
+// Output::Warning("airshipX {},  airshipY  {},  GoX {},  GoY {},  airshipFront {},  playerFront {}", airshipX, airshipY, GoX, GoY, airshipFront, playerFront   );
             }
+                  	}
 		}
-
-
-
+          }
+		}
             real_x = self.p.x - 0.5;
             real_y = self.p.y - 0.5;
 //      real_x = round((self.p.x - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
@@ -793,12 +830,13 @@ bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
 	SetX(round(real_x));
 	SetY(round(real_y));
 
-	if (abs(real_x - last_x) <= Epsilon && abs(real_y - last_y) <= Epsilon) {
+	if (abs(real_x - last_x) <= Epsilon && abs(real_y - last_y) <= Epsilon)
+        {
 		SetRemainingStep(0);
 		return false; //If there is no expressive change in the character's position, it is treated as if he has not moved.
-	}
+ }
 
-	return true;
+    return true;
 }
 
 bool Game_Character::Move(int dir) {
