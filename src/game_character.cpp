@@ -15,6 +15,7 @@
  * along with EasyRPG Player. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define CUTE_C2_IMPLEMENTATION
 // Headers
 #include "audio.h"
 #include "game_character.h"
@@ -34,6 +35,13 @@
 #include <cmath>
 #include <cassert>
 #include <unordered_set>
+#include "cute_c2.h"
+
+#include <lcf/data.h>
+#include <lcf/rpg/terrain.h>
+#include <lcf/reader_util.h>
+#include "tilemap.h"
+#include "tilemap_layer.h"
 
 Game_Character::Game_Character(Type type, lcf::rpg::SaveMapEventBase* d) :
 	_type(type), _data(d)
@@ -56,6 +64,13 @@ void Game_Character::SanitizeMoveRoute(StringView name, const lcf::rpg::MoveRout
 }
 
 void Game_Character::MoveTo(int map_id, int x, int y) {
+	if (true) { // TODO - PIXELMOVE
+		is_moving_toward_target = false;
+		real_x = (float)x;
+		real_y = (float)y;
+		//Output::Warning("Char Pos = {}x{}", real_x, real_y);
+	}// END - PIXELMOVE
+
 	data()->map_id = map_id;
 	// RPG_RT does not round the position for this function.
 	SetX(x);
@@ -72,6 +87,10 @@ int Game_Character::GetJumpHeight() const {
 }
 
 int Game_Character::GetScreenX() const {
+	if (true) { // TODO - PIXELMOVE
+		return floor(real_x * TILE_SIZE - floor((float)Game_Map::GetDisplayX() / (float)TILE_SIZE) + TILE_SIZE / 2);
+	} // END - PIXELMOVE
+
 	int x = GetSpriteX() / TILE_SIZE - Game_Map::GetDisplayX() / TILE_SIZE + TILE_SIZE;
 
 	if (Game_Map::LoopHorizontal()) {
@@ -83,6 +102,12 @@ int Game_Character::GetScreenX() const {
 }
 
 int Game_Character::GetScreenY(bool apply_jump) const {
+	if (true) { // TODO - PIXELMOVE
+		return floor(real_y * TILE_SIZE - floor((float)Game_Map::GetDisplayY() / (float)TILE_SIZE) + TILE_SIZE);
+		//return GetSpriteY() - Game_Map::GetDisplayY() / TILE_SIZE + TILE_SIZE;
+	} // END - PIXELMOVE
+
+
 	int y = GetSpriteY() / TILE_SIZE - Game_Map::GetDisplayY() / TILE_SIZE + TILE_SIZE;
 
 	if (apply_jump) {
@@ -131,6 +156,10 @@ void Game_Character::Update() {
 		return;
 	}
 	SetProcessed(true);
+
+	if (true) { // TODO - PIXELMOVE
+		UpdateMoveTowardTarget();
+	} // END - PIXELMOVE
 
 	if (IsStopping()) {
 		this->UpdateNextMovementAction();
@@ -221,6 +250,11 @@ void Game_Character::UpdateFlash() {
 }
 
 void Game_Character::UpdateMoveRoute(int32_t& current_index, const lcf::rpg::MoveRoute& current_route, bool is_overwrite) {
+	if (true && is_moving_toward_target && !current_route.skippable) { // TODO - PIXELMOVE
+		return;
+	} // END - PIXELMOVE
+
+
 	if (current_route.move_commands.empty()) {
 		return;
 	}
@@ -293,7 +327,40 @@ void Game_Character::UpdateMoveRoute(int32_t& current_index, const lcf::rpg::Mov
 				default:
 					break;
 			}
+			/*
 			Move(GetDirection());
+			*/
+
+			if (true && (cmd >= Code::move_towards_hero && cmd <= Code::move_away_from_hero)) { // TODO - PIXELMOVE
+				int flag = (1 - (cmd == Code::move_away_from_hero) * 2);
+				float vx = (Main_Data::game_player->real_x - real_x) * flag;
+				float vy = (Main_Data::game_player->real_y - real_y) * flag;
+				float length = sqrt(vx * vx + vy * vy);
+				float step_size = GetStepSize();
+				MoveVector(step_size * (vx / length), step_size * (vy / length));
+			}
+			else if (true) { // TODO - PIXELMOVE
+				float vx = (float)GetDxFromDirection(GetDirection());
+				float vy = (float)GetDyFromDirection(GetDirection());
+				c2v target;
+				if (forced_skip) {
+					forced_skip = false;
+					target = c2V(round(target_x + vx), round(target_y + vy));
+				}
+				else {
+					target = c2V(round(real_x + vx), round(real_y + vy));
+				}
+				SetMoveTowardTarget(target, current_route.skippable);
+				UpdateMoveTowardTarget();
+				if (!current_route.skippable) {
+					SetMaxStopCountForStep();
+					++current_index;
+					return;
+				}
+			}
+			else {
+				Move(GetDirection());
+			} // END - PIXELMOVE
 
 			if (IsStopping()) {
 				// Move failed
@@ -478,8 +545,505 @@ bool Game_Character::CheckWay(
 		ignore_all_events, ignore_some_events_by_id);
 }
 
+void Game_Character::SetMoveTowardTarget(c2v position, bool skippable) {
+	SetMoveTowardTarget(position.x, position.y, skippable);
+}
+
+void Game_Character::SetMoveTowardTarget(float x, float y, bool skippable) {
+	is_moving_toward_target = true;
+	is_move_toward_target_skippable = skippable;
+	target_x = x;
+	target_y = y;
+	move_direction = c2Norm(c2V(target_x - real_x, target_y - real_y));
+}
+
+bool Game_Character::UpdateMoveTowardTarget() {
+	if (!is_moving_toward_target || IsPaused()) {
+		return false;
+	}
+	//forced_skip       = false;
+	bool move_success = false;
+	c2v vector = c2V(target_x - real_x, target_y - real_y);
+	float length = c2Len(vector);
+	c2v vectorNorm = c2Div(vector, length);
+	float step_size = GetStepSize();
+	if (length > step_size) {
+		move_success = MoveVector(c2Mulvs(vectorNorm, step_size));
+	}
+	else {
+		move_success = MoveVector(vector);
+		is_moving_toward_target = false;
+	}
+	if (!move_success) {
+		if (is_move_toward_target_skippable) {
+			is_moving_toward_target = false;
+		}
+		else if (c2Dot(vectorNorm, move_direction) <= 0) {
+			is_moving_toward_target = false;
+			forced_skip = true;
+		}
+	}
+	return move_success;
+}
+
+bool Game_Character::MoveVector(c2v vector) {
+	return MoveVector(vector.x, vector.y);
+}
+
+bool Game_Character::MoveVector(float vx, float vy) {  // TODO - PIXELMOVE
+//	if (abs(vx) <= Epsilon && abs(vy) <= Epsilon) {
+//		return false;
+//	}
+
+    auto& player = Main_Data::game_player;
+    auto player_x = player->GetX();
+    auto player_y = player->GetY();
+
+
+    bool vehicle = Main_Data::game_player->InVehicle();
+    bool airship = Main_Data::game_player->InAirship();
+    bool flying = Main_Data::game_player->IsFlying();
+    bool boarding = Main_Data::game_player->IsBoardingOrUnboarding();
+    bool isAboard = Main_Data::game_player->IsAboard();
+    bool ascending = Game_Map::GetVehicle(Game_Vehicle::Airship)->IsAscending();
+    bool descending = Game_Map::GetVehicle(Game_Vehicle::Airship)->IsDescending();
+    bool airshipUse = Game_Map::GetVehicle(Game_Vehicle::Airship)->IsInUse();
+
+	auto boatFront = Game_Map::GetVehicle(Game_Vehicle::Boat)->GetDirection();
+	auto playerFront = Main_Data::game_player->GetDirection();
+    auto airshipFront    = Game_Map::GetVehicle(Game_Vehicle::Airship)->GetDirection();
+
+    auto MapID = Main_Data::game_player->GetMapId();
+
+    if (boarding || ascending || IsJumping() || descending)           // this is to try and stop events from going to NaNland.
+    {
+        return false;
+    }
+	UpdateFacing();
+	SetRemainingStep(1); //little hack to make the character step anim
+	float last_x = real_x;
+	float last_y = real_y;
+	real_x += vx;
+	real_y += vy;
+	if (GetThrough()) {
+		return true;
+	}
+	c2Circle self;
+	c2Circle other;
+	c2Circle hero;
+	self.p = c2V(real_x + 0.5, real_y + 0.5);
+	self.r = 0.5;
+   	other.r = 0.5;
+	c2AABB tile;
+
+	c2Manifold manifold;
+
+	/*
+	c2Poly poly;
+	poly.count = 4;
+	poly.verts[0] = c2V(0, 0);
+	poly.verts[1] = c2V(1, 0);
+	poly.verts[2] = c2V(1, 1);
+	poly.verts[3] = c2V(0, 1);
+	c2MakePoly(&poly);
+	c2x transform = c2xIdentity();
+	//
+	c2Poly poly;
+	poly.count = 3;
+	poly.verts[0] = c2V(0, 1);
+	poly.verts[1] = c2V(1, 0);
+	poly.verts[2] = c2V(1, 1);
+	c2MakePoly(&poly);
+	c2x transform = c2xIdentity();
+	transform.p = c2V(14, 16);
+	c2CircletoPolyManifold(self, &poly, &transform, &manifold);
+	if (manifold.count > 0) {
+		self.p.x -= manifold.n.x * manifold.depths[0];
+		self.p.y -= manifold.n.y * manifold.depths[0];
+	}
+	transform.p = c2V(15, 15);
+	c2CircletoPolyManifold(self, &poly, &transform, &manifold);
+	if (manifold.count > 0) {
+		self.p.x -= manifold.n.x * manifold.depths[0];
+		self.p.y -= manifold.n.y * manifold.depths[0];
+	}
+	transform.p = c2V(16, 14);
+	c2CircletoPolyManifold(self, &poly, &transform, &manifold);
+	if (manifold.count > 0) {
+		self.p.x -= manifold.n.x * manifold.depths[0];
+		self.p.y -= manifold.n.y * manifold.depths[0];
+	}
+	*/
+
+	//Test Collision With Events
+	for (auto& ev : Game_Map::GetEvents()) {
+		if (!Game_Map::WouldCollideWithCharacter(*this, ev, false)) {
+			continue;
+		}
+		other.p.x = ev.real_x + 0.5;
+		other.p.y = ev.real_y + 0.5;
+		c2CircletoCircleManifold(self, other, &manifold);
+		if (manifold.count > 0) {
+			self.p.x -= manifold.n.x * manifold.depths[0];
+			self.p.y -= manifold.n.y * manifold.depths[0];
+		}
+	}
+	//Test Collision With Player
+
+	if ((Game_Map::WouldCollideWithCharacter(*this, *player, false)) ) {
+		other.p.x = player->real_x + 0.5;
+		other.p.y = player->real_y + 0.5;
+		c2CircletoCircleManifold(self, other, &manifold);
+		if (manifold.count > 0) {
+			self.p.x -= manifold.n.x * manifold.depths[0];
+			self.p.y -= manifold.n.y * manifold.depths[0];
+		}
+	}
+	//Test Collision With Map - Map collision has high priority, so it is tested last
+
+	int map_width = Game_Map::GetTilesX();
+	int map_height = Game_Map::GetTilesY();
+
+
+
+	int left = floor((self.p.x - 0.5));
+	int right = floor((self.p.x - 0.5) + 1);
+	int top = floor((self.p.y - 0.5));
+	int bottom = floor((self.p.y - 0.5) + 1);
+
+            for     (int x = 0; x <= (right - left + 1); x++)   {
+            for (int y = 0; y <= (bottom - top + 1); y++) {
+			int tile_x = left + x;
+			int tile_y = top + y;
+
+   if (Game_Map::LoopHorizontal()) {
+			if ((tile_x < 0)  || (tile_x >= map_width)  )
+            {
+            tile_x = (tile_x % map_width + map_width) % map_width;
+            }
+            if ((self.p.x < 0)  )
+            {
+            self.p.x = self.p.x + map_width;
+            }
+            if ((self.p.x >= map_width)  )
+            {
+            self.p.x = self.p.x - map_width;
+            }
+                                    }
+   	if (Game_Map::LoopVertical())   {
+            if ((tile_y < 0) || (tile_y >= map_height) )
+            {
+            tile_y = (tile_y % map_height + map_height) % map_height;
+            }
+            if ((self.p.y < 0)  )
+            {
+            self.p.y = self.p.y + map_width;
+            }
+            if ( (self.p.y >= map_height) )
+            {
+            self.p.y = self.p.y - map_width;
+            }
+                                    }
+
+            if (!Game_Map::IsPassableTile(&(*this), 0x08, tile_x, tile_y)) {
+				tile.min = c2V(tile_x, tile_y);
+				tile.max = c2V(tile_x + 1, tile_y + 1);
+				c2CircletoAABBManifold(self, tile, &manifold);
+                    if (manifold.count > 0) {
+					self.p.x -= manifold.n.x * manifold.depths[0] * Game_Map::IsPassableTile(&(*this), 0x08, self.p.x, tile_y);
+					self.p.y -= manifold.n.y * manifold.depths[0] * Game_Map::IsPassableTile(&(*this), 0x08, tile_x, self.p.y);
+
+            if (flying)
+            {
+
+
+
+    int airshipX = Game_Map::GetVehicle(Game_Vehicle::Airship)->GetX();
+    int airshipY = Game_Map::GetVehicle(Game_Vehicle::Airship)->GetY();
+
+    int GoLeft = airshipX -1;
+    int GoRight = airshipX +1;
+    int GoUp = airshipY -1;
+    int GoDown = airshipY +1;
+
+
+	int terrain_below = Game_Map::GetTerrainTag(airshipX,airshipY);
+	const lcf::rpg::Terrain* terrainBelow = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_below);
+    bool flypassBelow = terrainBelow->airship_pass;
+
+	int terrain_idLeft = Game_Map::GetTerrainTag(GoLeft,airshipY);
+	const lcf::rpg::Terrain* terrainLeft = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idLeft);
+    bool flypassLeft = terrainLeft->airship_pass;
+
+    int terrain_idRight = Game_Map::GetTerrainTag(GoRight,airshipY);
+	const lcf::rpg::Terrain* terrainRight = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idRight);
+    bool flypassRight = terrainRight->airship_pass;
+
+    int terrain_idUp = Game_Map::GetTerrainTag(airshipX,GoUp);
+	const lcf::rpg::Terrain* terrainUp = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idUp);
+    bool flypassUp = terrainUp->airship_pass;
+
+    int terrain_idDown = Game_Map::GetTerrainTag(airshipX,GoDown);
+	const lcf::rpg::Terrain* terrainDown = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idDown);
+    bool flypassDown = terrainDown->airship_pass;
+
+    int terrain_idUpLeft = Game_Map::GetTerrainTag(GoLeft,GoUp);
+	const lcf::rpg::Terrain* terrainUpLeft = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idUpLeft);
+    bool flypassUpLeft = terrainUpLeft->airship_pass;
+
+    int terrain_idUpRight = Game_Map::GetTerrainTag(GoRight,GoUp);
+	const lcf::rpg::Terrain* terrainUpRight = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idUpRight);
+    bool flypassUpRight = terrainUpRight->airship_pass;
+
+    int terrain_idDownLeft = Game_Map::GetTerrainTag(GoLeft,GoDown);
+	const lcf::rpg::Terrain* terrainDownLeft = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idDownLeft);
+    bool flypassDownLeft = terrainDownLeft->airship_pass;
+
+    int terrain_idDownRight = Game_Map::GetTerrainTag(GoRight,GoDown);
+	const lcf::rpg::Terrain* terrainDownRight = lcf::ReaderUtil::GetElement(lcf::Data::terrains, terrain_idDownRight);
+    bool flypassDownRight = terrainDownRight->airship_pass;
+
+    bool phasing = data()->move_route_through = true;
+
+//                    bool boatpass = terrain->boat_pass;
+//                    bool shippass = terrain->ship_pass;
+
+
+// Need to add more conditions like flypassUp  &&    flypassUpRight && flyPass Right
+
+if (!flypassBelow  )
+{
+        if (Input::IsPressed(Input::UP) && (GoUp != -1))
+
+        {
+    if ((flypassUp) || (flypassUp && flypassRight) || (flypassUp && flypassUpRight && flypassRight) ||  (flypassUp && flypassUpLeft && flypassLeft) || (flypassUp && flypassUpRight) ||  (flypassUp && flypassUpLeft) || (flypassUp && flypassDown) || (flypassLeft && flypassUp) || (flypassLeft && flypassUp  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+        Main_Data::game_player->SetY(GoUp);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(GoUp);
+        Main_Data::game_player->MoveTo(MapID, airshipX, GoUp);
+
+       	void ResetKeys();
+        phasing = data()->move_route_through = false;
+        return true;
+    }
+        }
+        else
+             if (Input::IsPressed(Input::UP) && (Input::IsPressed(Input::LEFT) && (GoLeft != -1) && (GoUp != -1)))
+
+        {
+    if ((flypassUp) || (flypassUp && flypassRight) ||  (flypassUp && flypassUpLeft && flypassLeft) || (flypassUp && flypassUpLeft)  || (flypassUp && flypassUpRight) || (flypassUp && flypassDown) || (flypassLeft && flypassUp) || (flypassLeft && flypassUp  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+
+        Main_Data::game_player->SetX(GoLeft);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(GoLeft);
+        Main_Data::game_player->SetY(GoUp);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(GoUp);
+        Main_Data::game_player->MoveTo(MapID, GoLeft, GoUp);
+
+       	void ResetKeys();
+        phasing = data()->move_route_through = false;
+        return true;
+    }
+        }
+    else
+
+        if (Input::IsPressed(Input::UP) && (Input::IsPressed(Input::RIGHT) && (GoRight != map_width) && (GoUp != -1)))
+
+        {
+    if ((flypassUp) || (flypassUp && flypassRight) || (flypassUp && flypassUpRight && flypassRight) || (flypassUp && flypassUpRight) ||  (flypassUp && flypassUpLeft) || (flypassUp && flypassDown) || (flypassLeft && flypassUp) || (flypassLeft && flypassUp  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+        Main_Data::game_player->SetX(GoRight);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(GoRight);
+        Main_Data::game_player->SetY(GoUp);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(GoUp);
+        Main_Data::game_player->MoveTo(MapID, GoRight, GoUp);
+       	void ResetKeys();
+        phasing = data()->move_route_through = false;
+        return true;
+    }
+        }
+    else
+         if (Input::IsPressed(Input::DOWN) && (GoDown != map_height))
+        {
+    if ((flypassDown) || (flypassRight && flypassDown) || (flypassLeft && flypassDown) || (flypassDownRight && flypassDown && flypassRight) || (flypassDownLeft && flypassDown && flypassLeft) || (flypassDownRight && flypassDown) || (flypassDownLeft && flypassDown) || (flypassUp && flypassDown) || (flypassLeft && flypassDown  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+        Main_Data::game_player->SetY(GoDown);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(GoDown);
+        Main_Data::game_player->MoveTo(MapID, airshipX, GoDown);
+       	void ResetKeys();;
+        phasing = data()->move_route_through = false;
+        return true;
+    }
+        }
+    else
+              if (Input::IsPressed(Input::DOWN) && (Input::IsPressed(Input::LEFT) && (GoLeft != -1) && (GoDown != map_height)))
+        {
+    if ((flypassDown) || (flypassRight && flypassDown) || (flypassDownLeft && flypassDown && flypassLeft) || (flypassLeft && flypassDown) || (flypassDownRight && flypassDown) || (flypassDownLeft && flypassDown) ||   (flypassUp && flypassDown) || (flypassLeft && flypassDown  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+        Main_Data::game_player->SetX(GoLeft);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(GoLeft);
+        Main_Data::game_player->SetY(GoDown);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(GoDown);
+        Main_Data::game_player->MoveTo(MapID, GoLeft, GoDown);
+
+       	void ResetKeys();;
+        phasing = data()->move_route_through = false;
+        return true;
+    }
+        }
+    else
+         if (Input::IsPressed(Input::DOWN)  && (Input::IsPressed(Input::RIGHT) && (GoRight != map_width && (GoDown != map_height))))
+        {
+    if ((flypassDown) || (flypassRight && flypassDown) ||  (flypassDownRight && flypassDown && flypassRight) || (flypassLeft && flypassDown) || (flypassDownRight && flypassDown) || (flypassDownLeft && flypassDown) ||  (flypassUp && flypassDown) || (flypassLeft && flypassDown  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+        Main_Data::game_player->SetX(GoRight);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(GoRight);
+        Main_Data::game_player->SetY(GoDown);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(GoDown);
+        Main_Data::game_player->MoveTo(MapID, GoRight, GoDown);
+
+       	void ResetKeys();;
+        phasing = data()->move_route_through = false;
+        return true;
+    }
+        }
+   else
+        if (Input::IsPressed(Input::RIGHT) && (GoRight != map_width))
+        {
+    if ((flypassRight) || (flypassRight && flypassDown) || (flypassUp && flypassUpRight && flypassRight)  || (flypassDownRight && flypassDown && flypassRight) || (flypassLeft && flypassRight) || (flypassUp && flypassRight) || (flypassDownRight && flypassRight) || (flypassUpRight && flypassRight) ||  (flypassLeft && flypassUp  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+        Main_Data::game_player->SetX(GoRight);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(GoRight);
+        Main_Data::game_player->MoveTo(MapID, GoRight, airshipY);
+
+        void ResetKeys();
+        phasing = data()->move_route_through = false;
+        return true;
+    }
+        }
+    else
+
+        if (Input::IsPressed(Input::LEFT) && (GoLeft != -1) )
+        {
+    if ((flypassLeft) || (flypassRight && flypassLeft) || (flypassLeft && flypassDown) || (flypassUp && flypassLeft) ||  (flypassUp && flypassUpLeft && flypassLeft) || (flypassDownLeft && flypassDown && flypassLeft) || (flypassDownLeft && flypassLeft) || (flypassUpLeft && flypassLeft) || (flypassLeft && flypassDown  && flypassRight) || (flypassLeft && flypassUp  && flypassRight && flypassDown)      )
+    {
+        phasing = data()->move_route_through = true;
+
+        Main_Data::game_player->SetX(GoLeft);
+        Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(GoLeft);
+        Main_Data::game_player->MoveTo(MapID, GoLeft, airshipY);
+
+        void ResetKeys();
+        phasing = data()->move_route_through = false;
+        return true;
+        }
+    }
+
+
+
+
+}
+    else
+        if (flypassBelow   && (GoUp != -1) && (GoDown != map_height) && (GoLeft != -1)  && (GoRight != map_width)  )
+        {
+
+       void ResetKeys();
+       phasing = data()->move_route_through = false;
+
+}
+    phasing = data()->move_route_through = false;
+
+// Let's try putting the "stop going off the map" code here?
+
+if (!Game_Map::LoopHorizontal()) {
+
+        if (airshipX < 0)
+        {
+             phasing = data()->move_route_through = false;
+             Main_Data::game_player->SetX(0);
+             Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(0);
+             Main_Data::game_player->MoveTo(MapID, 0, airshipY);
+             void ResetKeys();
+             return false;
+        }
+        if (airshipX >= (map_width))
+        {
+             phasing = data()->move_route_through = false;
+             Main_Data::game_player->SetX(map_width - 1);
+             Game_Map::GetVehicle(Game_Vehicle::Airship)->SetX(map_width - 1);
+             Main_Data::game_player->MoveTo(MapID, (map_width -1), airshipY);
+             void ResetKeys();
+             return false;
+        }                         }
+
+if (!Game_Map::LoopVertical()) {
+
+        if (airshipY < 0)
+        {
+             phasing = data()->move_route_through = false;
+             Main_Data::game_player->SetY(0);
+             Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(0);
+             Main_Data::game_player->MoveTo(MapID, airshipX, 0);
+             void ResetKeys();
+             return false;
+        }
+        if (airshipY >= (map_height))
+        {
+             phasing = data()->move_route_through = false;
+             Main_Data::game_player->SetY(map_height - 1);
+             Game_Map::GetVehicle(Game_Vehicle::Airship)->SetY(map_height - 1);
+             Main_Data::game_player->MoveTo(MapID, (airshipX), map_height - 1);
+             void ResetKeys();
+             return false;
+        }                         }
+
+//    Game_Map::GetVehicle(Game_Vehicle::Airship)->MakeWay(airshipX, airshipY, GoX, GoY);
+ //   Main_Data::game_player->MakeWay(airshipX, airshipY, GoX, GoY);
+
+ Output::Warning("GoLeft {},  GoDown  {},  GoRight {},  GoUp {}, airshipX {}, airshipY {}  ", GoLeft, GoDown, GoRight, GoUp, airshipX, airshipY   );
+            }
+                  	}
+		}
+          }
+		}
+            real_x = self.p.x - 0.5;
+            real_y = self.p.y - 0.5;
+//      real_x = round((self.p.x - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
+//      real_y = round((self.p.y - 0.5) * (float)SCREEN_TILE_SIZE) / SCREEN_TILE_SIZE;
+	SetX(round(real_x));
+	SetY(round(real_y));
+
+	if (abs(real_x - last_x) <= Epsilon && abs(real_y - last_y) <= Epsilon)
+        {
+		SetRemainingStep(0);
+		return false; //If there is no expressive change in the character's position, it is treated as if he has not moved.
+ }
+
+    return true;
+}
 
 bool Game_Character::Move(int dir) {
+
+	if (true) { // TODO - PIXELMOVE
+		SetDirection(dir);
+		c2v vector = c2V(GetDxFromDirection(dir), GetDyFromDirection(dir));
+		float step_size = GetStepSize();
+		return MoveVector(c2Mulvs(c2Norm(vector), step_size));
+	}
 	if (!IsStopping()) {
 		return true;
 	}
@@ -676,6 +1240,10 @@ bool Game_Character::BeginMoveRouteJump(int32_t& current_index, const lcf::rpg::
 }
 
 bool Game_Character::Jump(int x, int y) {
+
+   		real_x = (float)x;
+		real_y = (float)y;
+
 	if (!IsStopping()) {
 		return true;
 	}
@@ -726,15 +1294,73 @@ bool Game_Character::Jump(int x, int y) {
 
 	SetBeginJumpX(begin_x);
 	SetBeginJumpY(begin_y);
-	SetX(x);
-	SetY(y);
-	SetJumping(true);
-	SetRemainingStep(SCREEN_TILE_SIZE);
+  	SetX(x);
+  	SetY(y);
+//  SetX(real_x);
+//  SetY(real_y);
+    SetJumping(true);
+        SetRemainingStep(SCREEN_TILE_SIZE);
+
+ /*     if (true) { // TODO - PIXELMOVE
+
+
+
+//      SetDirection(GetDirection());
+        c2v vector = c2V(GetDxFromDirection(GetDirection()), GetDyFromDirection(GetDirection()));
+//      c2v vector = c2V(real_x - begin_x, real_y - begin_y);
+		float length = c2Len(vector);
+        c2v vectorNorm = c2Div(vector, length);
+        float step_size = GetStepSize();
+//      MoveVector(c2Mulvs(vectorNorm, step_size));
+  		MoveVector(c2Mulvs(c2Norm(vectorNorm), step_size));
+//      SetRemainingStep(0);
+}
+*/
+
+/* Reference material
+    c2v vector = c2V(GetDxFromDirection(GetDirection()), GetDyFromDirection(GetDirection()));
+	c2v vector = c2V(target_x - real_x, target_y - real_y);
+	float length = c2Len(vector);
+	c2v vectorNorm = c2Div(vector, length);
+	float step_size = GetStepSize();
+	if (length > step_size) {
+		move_success = MoveVector(c2Mulvs(vectorNorm, step_size));
+	}
+	else {
+		move_success = MoveVector(vector);
+		is_moving_toward_target = false;
+	}
+	if (!move_success) {
+		if (is_move_toward_target_skippable) {
+			is_moving_toward_target = false;
+		}
+		else if (c2Dot(vectorNorm, move_direction) <= 0) {
+			is_moving_toward_target = false;
+			forced_skip = true;
+		}
+	}
+
+*/
 
 	return true;
 }
 
 int Game_Character::GetDistanceXfromCharacter(const Game_Character& target) const {
+	if (true) { // TODO - PIXELMOVE
+
+		float sx = real_x - Main_Data::game_player->real_x;
+
+		if (Game_Map::LoopHorizontal()) {
+			if (std::abs(sx) > Game_Map::GetTilesX() / 2) {
+				if (sx > 0)
+					sx -= Game_Map::GetTilesX();
+				else
+					sx += Game_Map::GetTilesX();
+			}
+		}
+		return round(sx * SCREEN_TILE_SIZE);
+	} //END - PIXELMOVE
+
 	int sx = GetX() - target.GetX();
 	if (Game_Map::LoopHorizontal()) {
 		if (std::abs(sx) > Game_Map::GetTilesX() / 2) {
@@ -748,6 +1374,20 @@ int Game_Character::GetDistanceXfromCharacter(const Game_Character& target) cons
 }
 
 int Game_Character::GetDistanceYfromCharacter(const Game_Character& target) const {
+	if (true) { // TODO - PIXELMOVE
+		float sy = real_y - Main_Data::game_player->real_y;
+
+		if (Game_Map::LoopVertical()) {
+			if (std::abs(sy) > Game_Map::GetTilesY() / 2) {
+				if (sy > 0)
+					sy -= Game_Map::GetTilesY();
+				else
+					sy += Game_Map::GetTilesY();
+			}
+		}
+		return round(sy * SCREEN_TILE_SIZE);
+	} // END - PIXELMOVE
+
 	int sy = GetY() - target.GetY();
 	if (Game_Map::LoopVertical()) {
 		if (std::abs(sy) > Game_Map::GetTilesY() / 2) {
@@ -794,6 +1434,9 @@ void Game_Character::CancelMoveRoute() {
 }
 
 int Game_Character::GetSpriteX() const {
+	if (true) { // TODO - PIXEL MOVE
+		return round(real_x * SCREEN_TILE_SIZE);
+	} // END - PIXELMOVE
 	int x = GetX() * SCREEN_TILE_SIZE;
 
 	if (IsMoving()) {
@@ -810,6 +1453,10 @@ int Game_Character::GetSpriteX() const {
 }
 
 int Game_Character::GetSpriteY() const {
+	if (true) { // TODO - PIXELMOVE
+		return round(real_y * TILE_SIZE);
+	} // END - PIXELMOVE
+
 	int y = GetY() * SCREEN_TILE_SIZE;
 
 	if (IsMoving()) {
